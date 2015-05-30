@@ -84,6 +84,8 @@ img {
 .map_canvas object {
   max-width: none !important; }
 
+  #deck li {display:inline;}
+
 .left {
   float: left !important; }
 

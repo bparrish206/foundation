@@ -9,7 +9,6 @@ function Deck() {
   };
 
   this.init = function() {
-
     var s, r;
     for (s = 1; s<=4; s++) {
       for(r = 1; r <=13; r++) {
@@ -19,29 +18,23 @@ function Deck() {
   };
 
   this.shuffle = function(){
+    $('#deck').empty();
+    $("#peek").show();
     var m = this.cards.length, t, rand;
     while(m > 0) {
       rand = Math.floor(Math.random() * m--);
-      t = this.cards[m];
-      this.cards[m] = this.cards[rand];
-      this.cards[rand] = t;
-    }
-  };
-
-  this.show = function() {
-    for (var n = 0; n < this.cards.length; n++) {
+      t = this.cards[rand];
       $("#deck").
-      append("<li>Card: " + this.cards[n].rank + " of " + this.cards[n].Suit() + "</li>").
+      append("<li>Card: " + t.rank + " of " + t.Suit() + " " + "</li>").
       hide();
     }
   };
 
   this.reveal = function() {
     deck.shuffle();
-    deck.show();
     $("#deck").fadeIn();
-    $("#peek").append("No counting!")
-    $("#deck").fadeOut();
+    $("#deck").fadeOut('slow');
+    $("#peek").fadeOut('slow');
   };
 };
 

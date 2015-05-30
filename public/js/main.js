@@ -5,6 +5,7 @@ var d = require('./deck.js');
 console.log(bj);
 bj.play();
 
+$("#peek").hide();
 $("button#play-game").on("click", bj.showCards);
 $("button#reveal-cards").on("click", d.reveal);
 $("button#hitMeY").on("click", bj.clickY);
