@@ -1,0 +1,93 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foundation | Welcome</title>
+    <link rel="stylesheet" href="css/foundation.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  </head>
+  <body>
+
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="header-container">
+          <header class="wrapper clearfix">
+            <h1 class="title">Brent's Blackjack Bonanza!</h1>
+            <nav>
+              <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Rules</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </nav>
+          </header>
+        </div>
+
+        <div class="main-container">
+          <div class="main wrapper clearfix">
+
+            <aside>
+              <h3>Let's shuffle the deck to start!</h3>
+              <p> <button id="reveal-cards">
+                SHUFFLE
+              </button>
+              <h4 id="peek"> No Counting!
+              </h4>
+              <ul id="deck">
+              </ul>
+            </p>
+
+          </aside>
+
+          <article>
+            <header>
+              <h1>Are you ready to play?</h1>
+              <p><button id="play-game">
+                Deal
+              </button></p>
+            </header>
+
+            <section>
+              <h3>Your cards are</h3>
+              <p style="background-color:white" id="players-cards">
+              </p>
+
+              <p style = "background-color:tan" id="dealers-cards">
+              </p>
+            </section>
+          </article>
+          <article>
+            <h1>Feeling Lucky?  Your move</h1>
+            <p>
+              <button class="medium success button" id="hitMeY">Hit Me!
+              </button>
+              <button class="medium alert button" id="hitMeN"> No cards for me. </button>
+            </p>
+
+            <p style="background-color:white" id="round2">
+            </p>
+          </article>
+          <article>
+            <p style="background-color:gold" id="Status">
+            </p>
+          </article>
+
+
+        </div> <!-- #main -->
+      </div> <!-- #main-container -->
+
+      <div class="footer-container">
+        <footer class="wrapper">
+          <h3>Brent is not responsible for any losses or aggravation encountered while playing this game.</h3>
+        </footer>
+      </div>
+
+      </div>
+    </div>
+    <script src="bundle.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+  </body>
+</html>
