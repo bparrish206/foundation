@@ -21,6 +21,7 @@ function Blackjack(players, deck){
     select = Math.floor(Math.random() * (52 - 1)) + 1;
     if (num % 2 ===0) {
       this.hand.push(deck.cards[select].numb());
+      this.hand.push(deck.cards[select].suit);
     }
 
     else  {
@@ -30,6 +31,7 @@ function Blackjack(players, deck){
   };
 
   this.gameFlow = function() {
+    $("#Status").empty();
     if (currentHand == 21) {
       $("#Status").append("<p> YOU WIN!!!</p>").hide();
       console.log("YOU WIN!!!");
@@ -60,14 +62,6 @@ function Blackjack(players, deck){
     }
   };
 
-  this.play = function() {
-    console.log("Your first two cards are:");
-    this.deal(2);
-    console.log("Dealer gets:");
-    this.dealer(2);
-    this.gameFlow();
-  };
-
   this.dealer = function(hits) {
     var i;
     for (i = 0; i < hits; i++) {
@@ -81,24 +75,48 @@ function Blackjack(players, deck){
   };
 
   this.deal = function(hits) {
-    var i, crd1, crd2;
+    var i, crd1, crd1s, crd2, crd2s, heart, spade, diamond, club;
     for (i = 0; i < hits; i++) {
       $("#players-cards").
       append("<p> Your card is: " + this.rand(2)+"</p>");
-      currentHand = this.hand.reduce(this.sum, 0);
+      currentHand = this.sum(this.hand[0], this.hand[2]);
     }
 
     crd1 = this.hand[0];
-    crd2 = this.hand[1];
+    crd1s = this.hand[1];
+    crd2 = this.hand[2];
+    crd2s = this.hand[3];
+    heart = 'http://res.cloudinary.com/bone/image/upload/v1433117747/heart_ys4iaf.jpg';
+    spade = 'http://res.cloudinary.com/bone/image/upload/v1433117747/spade_rahylc.jpg';
+    diamond = 'http://res.cloudinary.com/bone/image/upload/v1433117747/diamond_j37sts.jpg';
+    club = 'http://res.cloudinary.com/bone/image/upload/v1433117747/Club_zl5a9x.png';
 
     $('#players-cards').
-    append("<p>Your current hand is " + currentHand +"</p>").
-    hide().
+    append("<h4>Your current hand is " + currentHand +"</h4>").
     prepend("<div id='card'></div>");
-    $('#card').append("<p id='top'>"+crd1 +"</p>" + "<img id='cardImg' src='http://res.cloudinary.com/bone/image/upload/v1433117747/heart_ys4iaf.jpg'>" + "<p id='btm'>"+crd1 +"</p>" )
+    if (crd1s == 1){
+    $('#card').append("<p id='top'>"+crd1 +"</p>" + "<img id='cardImg' src="+heart+">" + "<p id='btm'>"+crd1 +"</p>" )
+  } else if (crd1s == 2) {
+    $('#card').append("<p id='top'>"+crd1 +"</p>" + "<img id='cardImg' src="+spade+">" + "<p id='btm'>"+crd1 +"</p>" )
+  }
+  else if (crd1s == 3) {
+    $('#card').append("<p id='top'>"+crd1 +"</p>" + "<img id='cardImg' src="+diamond+">" + "<p id='btm'>"+crd1 +"</p>" )
+  } else {$('#card').append("<p id='top'>"+crd1 +"</p>" + "<img id='cardImg' src="+club+">" + "<p id='btm'>"+crd1 +"</p>" )}
     $('#players-cards').
     prepend("<div id='card'></div>");
-    $("#card").append("<p id='top'>"+crd2+"</p>" +"<img id='cardImg' src='http://res.cloudinary.com/bone/image/upload/v1433117747/Club_zl5a9x.png'>" + "<p id='btm'>" +crd2+"</p>");
+    if (crd2s == 1){
+      $('#card').append("<p id='top'>"+crd2 +"</p>" + "<img id='cardImg' src="+heart+">" + "<p id='btm'>"+crd2 +"</p>" )
+    } else if (crd2s == 2){
+      $('#card').append("<p id='top'>"+crd2 +"</p>" + "<img id='cardImg' src="+spade+">" + "<p id='btm'>"+crd2 +"</p>" )
+    }  else if (crd2s == 3) {
+      $('#card').append("<p id='top'>"+crd2 +"</p>" + "<img id='cardImg' src="+diamond+">" + "<p id='btm'>"+crd2 +"</p>" )
+    } else{$('#card').append("<p id='top'>"+crd2 +"</p>" + "<img id='cardImg' src="+club+">" + "<p id='btm'>"+crd2 +"</p>" )}
+  };
+
+  this.play = function() {
+    this.deal(2);
+    this.dealer(2);
+    this.gameFlow();
   };
 
   this.clickY= function() {
