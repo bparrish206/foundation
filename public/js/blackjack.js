@@ -81,15 +81,21 @@ function Blackjack(players, deck){
   };
 
   this.deal = function(hits) {
-    var i;
+    var i, crd1, crd2;
     for (i = 0; i < hits; i++) {
       $("#players-cards").
-      append("<p> Your card is " + this.rand(2)+"</p>");
+      append("<p> Your card is: " + this.rand(2)+"</p>");
       currentHand = this.hand.reduce(this.sum, 0);
     }
+    
+    crd1 = this.hand[0];
+    crd2 = this.hand[1];
+
     $('#players-cards').
     append("<p>Your current hand is " + currentHand +"</p>").
-    hide();
+    hide().
+    append("<div id='card'></div>");
+    $('#card').append("<p id='top'>"+crd1 +"</p>" + "<img id='cardImg' src='http://res.cloudinary.com/bone/image/upload/v1433117747/heart_ys4iaf.jpg' style='width:75px;height:75px'>" + "<p id='btm'>"+crd1 +"</p>" );
     console.log("Your current hand is  " + currentHand);
   };
 

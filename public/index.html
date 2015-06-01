@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Foundation | Welcome</title>
     <link rel="stylesheet" href="css/foundation.css" />
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/bj.css" />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   </head>
   <body>
 
@@ -14,11 +15,11 @@
         <div class="header-container">
           <header class="wrapper clearfix">
             <h1 class="title">Brent's Blackjack Bonanza!</h1>
-            <nav>
+            <nav class="top-bar">
               <ul>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Rules</a></li>
-                <li><a href="#">Contact</a></li>
+                <li id ="navs"><a href="#">About</a></li>
+                <li id ="navs"><a href="#">Rules</a></li>
+                <li id = "navs"><a href="#">Contact</a></li>
               </ul>
             </nav>
           </header>
@@ -49,16 +50,16 @@
             </header>
 
             <section>
-              <h3>Your cards are</h3>
-              <p style="background-color:white" id="players-cards">
+              <h3>Your cards are:</h3>
+              <h3 id="dealers-title">Dealer's cards:</h3>
+              <p class="large-5 columns" id="players-cards">
               </p>
-
-              <p style = "background-color:tan" id="dealers-cards">
+              <p class="large-5 columns" id="dealers-cards">
               </p>
             </section>
           </article>
           <article>
-            <h1>Feeling Lucky?  Your move</h1>
+
             <p>
               <button class="medium success button" id="hitMeY">Hit Me!
               </button>
@@ -79,7 +80,7 @@
 
       <div class="footer-container">
         <footer class="wrapper">
-          <h3>Brent is not responsible for any losses or aggravation encountered while playing this game.</h3>
+          <h5>Brent is not responsible for any losses or aggravation encountered while playing this game.</h5>
         </footer>
       </div>
 
