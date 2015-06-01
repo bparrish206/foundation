@@ -1,0 +1,67 @@
+
+#navs {
+  display:inline;
+  padding: 0 10px;
+}
+
+.top-bar {
+  margin-left:0 !important;
+}
+
+
+#dealers-title {
+  margin-left: 525px;
+  margin-top: -42px;
+}
+
+#players-cards, #dealers-cards {
+  background-color:#ddd;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin: 0 20px;
+  display:none;
+
+}
+
+#card {
+  height:200px;
+  width:125px;
+  background:white;
+  border:1px solid black;
+  border-radius:3%;
+  margin:5px;
+}
+
+#cardImg {
+  margin-top: -14px;
+  margin-left: 15px;
+  width:90px;
+  height:90px;
+}
+
+p#btm {
+  margin-left: 84px;
+  font-size: 200%;
+  color:#DB0B49
+}
+
+p#top {
+  color:#DB0B49;
+  font-size:200%;
+  padding-left: 10px;
+}
+
+
+#card:first-child {
+margin-left: 150px;
+display:inline-block !important;
+}
+
+#card:nth-child(2) {
+  margin-top: -205px;
+}
+
+
+#Status {
+  background: gold;
+}

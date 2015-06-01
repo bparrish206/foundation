@@ -2,7 +2,6 @@
 
 var bj = require('./blackjack');
 var d = require('./deck.js');
-console.log(bj);
 bj.play();
 
 $("#peek").hide();
