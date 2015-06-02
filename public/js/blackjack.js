@@ -5,12 +5,17 @@ var deck = require('./deck.js');
 deck.init();
 
 function Blackjack(players, deck){
-  var pick, card, currentHand, dealerHand, dealerzHand;
+  var pick, card, currentHand, dealerHand, dealerzHand, heart, spade, diamond, club;
   this.players = players;
   this.deck = deck.cards;
   deck.shuffle();
   this.hand = [];
   this.dealerHand = [];
+
+  heart = 'http://res.cloudinary.com/bone/image/upload/v1433117747/heart_ys4iaf.jpg';
+  spade = 'http://res.cloudinary.com/bone/image/upload/v1433117747/spade_rahylc.jpg';
+  diamond = 'http://res.cloudinary.com/bone/image/upload/v1433117747/diamond_j37sts.jpg';
+  club = 'http://res.cloudinary.com/bone/image/upload/v1433117747/Club_zl5a9x.png';
 
   this.sum = function(a, b) {
     return (a + b);
@@ -74,8 +79,13 @@ function Blackjack(players, deck){
     console.log("The dealer's hand is " + dealerzHand);
   };
 
+
+  this.display = function(num, img) {
+    $('#card').append("<p id='top'>"+num+"</p>"+"<img id='cardImg' src="+img+">" + "<p id='btm'>"+num+"</p>")
+};
+
   this.deal = function(hits) {
-    var i, crd1, crd1s, crd2, crd2s, heart, spade, diamond, club;
+    var i, crd1, crd1s, crd2, crd2s;
     for (i = 0; i < hits; i++) {
       $("#players-cards").
       append("<p> Your card is: " + this.rand(2)+"</p>");
@@ -86,31 +96,30 @@ function Blackjack(players, deck){
     crd1s = this.hand[1];
     crd2 = this.hand[2];
     crd2s = this.hand[3];
-    heart = 'http://res.cloudinary.com/bone/image/upload/v1433117747/heart_ys4iaf.jpg';
-    spade = 'http://res.cloudinary.com/bone/image/upload/v1433117747/spade_rahylc.jpg';
-    diamond = 'http://res.cloudinary.com/bone/image/upload/v1433117747/diamond_j37sts.jpg';
-    club = 'http://res.cloudinary.com/bone/image/upload/v1433117747/Club_zl5a9x.png';
 
     $('#players-cards').
     append("<h4>Your current hand is " + currentHand +"</h4>").
     prepend("<div id='card'></div>");
+    console.log(this.hand);
     if (crd1s == 1){
-    $('#card').append("<p id='top'>"+crd1 +"</p>" + "<img id='cardImg' src="+heart+">" + "<p id='btm'>"+crd1 +"</p>" )
-  } else if (crd1s == 2) {
-    $('#card').append("<p id='top'>"+crd1 +"</p>" + "<img id='cardImg' src="+spade+">" + "<p id='btm'>"+crd1 +"</p>" )
-  }
-  else if (crd1s == 3) {
-    $('#card').append("<p id='top'>"+crd1 +"</p>" + "<img id='cardImg' src="+diamond+">" + "<p id='btm'>"+crd1 +"</p>" )
-  } else {$('#card').append("<p id='top'>"+crd1 +"</p>" + "<img id='cardImg' src="+club+">" + "<p id='btm'>"+crd1 +"</p>" )}
-    $('#players-cards').
-    prepend("<div id='card'></div>");
-    if (crd2s == 1){
-      $('#card').append("<p id='top'>"+crd2 +"</p>" + "<img id='cardImg' src="+heart+">" + "<p id='btm'>"+crd2 +"</p>" )
-    } else if (crd2s == 2){
-      $('#card').append("<p id='top'>"+crd2 +"</p>" + "<img id='cardImg' src="+spade+">" + "<p id='btm'>"+crd2 +"</p>" )
-    }  else if (crd2s == 3) {
-      $('#card').append("<p id='top'>"+crd2 +"</p>" + "<img id='cardImg' src="+diamond+">" + "<p id='btm'>"+crd2 +"</p>" )
-    } else{$('#card').append("<p id='top'>"+crd2 +"</p>" + "<img id='cardImg' src="+club+">" + "<p id='btm'>"+crd2 +"</p>" )}
+      this.display(crd1, heart);
+    } else if (crd1s == 2) {
+      this.display(crd1, spade);
+    }
+    else if (crd1s == 3) {
+      this.display(crd1, diamond);
+    } else {this.display(crd1, club);}
+
+      $('#players-cards').
+      prepend("<div id='card'></div>");
+      console.log(crd2s);
+      if (crd2s == 1){
+        this.display(crd2, heart);
+      } else if (crd2s == 2){
+        this.display(crd2, spade);
+      }  else if (crd2s == 3) {
+        this.display(crd2, diamond);
+      } else{this.display(crd2, club);}
   };
 
   this.play = function() {
