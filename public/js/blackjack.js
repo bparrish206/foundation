@@ -1,21 +1,15 @@
 'use strict';
 
-var Card = require('./cards.js');
 var deck = require('./deck.js');
 deck.init();
 
 function Blackjack(players, deck){
-  var pick, card, currentHand, dealerHand, dealerzHand, heart, spade, diamond, club;
+  var pick, card, currentHand, dealerHand, dealerzHand;
   this.players = players;
   this.deck = deck.cards;
   deck.shuffle();
   this.hand = [];
   this.dealerHand = [];
-
-  heart = 'http://res.cloudinary.com/bone/image/upload/v1433117747/heart_ys4iaf.jpg';
-  spade = 'http://res.cloudinary.com/bone/image/upload/v1433117747/spade_rahylc.jpg';
-  diamond = 'http://res.cloudinary.com/bone/image/upload/v1433117747/diamond_j37sts.jpg';
-  club = 'http://res.cloudinary.com/bone/image/upload/v1433117747/Club_zl5a9x.png';
 
   this.sum = function(a, b) {
     return (a + b);
@@ -25,8 +19,9 @@ function Blackjack(players, deck){
     var select;
     select = Math.floor(Math.random() * (52 - 1)) + 1;
     if (num % 2 ===0) {
-      this.hand.push(deck.cards[select].numb());
-      this.hand.push(deck.cards[select].suit);
+      //this.hand.push(deck.cards[select].numb());
+      //this.hand.push(deck.cards[select].suit);
+      this.hand.push(deck.cards[select]);
     }
 
     else  {
@@ -39,12 +34,10 @@ function Blackjack(players, deck){
     $("#Status").empty();
     if (currentHand == 21) {
       $("#Status").append("<p> YOU WIN!!!</p>").hide();
-      console.log("YOU WIN!!!");
     }
 
     else if (currentHand > 21) {
       $("#Status").append("<p> Busted, you lose! </p>").hide();
-      console.log("Busted, you lose!");
     }
 
     else if (dealerzHand < 18) {
@@ -59,7 +52,6 @@ function Blackjack(players, deck){
 
     else if (dealerzHand > currentHand &&  dealerzHand <= 21) {
       $("#Status").append("<p> Dealer wins, you lose </p>").hide();
-      console.log("Dealer wins, you lose.");
     }
 
     else if (currentHand > dealerzHand && currentHand <=21) {
@@ -76,50 +68,33 @@ function Blackjack(players, deck){
     $("#dealers-cards").
     append("<p> The dealer's hand is " + dealerzHand +"</p>").
     hide();
-    console.log("The dealer's hand is " + dealerzHand);
   };
-
 
   this.display = function(num, img) {
     $('#card').append("<p id='top'>"+num+"</p>"+"<img id='cardImg' src="+img+">" + "<p id='btm'>"+num+"</p>")
 };
 
   this.deal = function(hits) {
-    var i, crd1, crd1s, crd2, crd2s;
+    var i, crd1, crd1s,crd1g, crd2, crd2s, crd2g;
     for (i = 0; i < hits; i++) {
       $("#players-cards").
       append("<p> Your card is: " + this.rand(2)+"</p>");
-      currentHand = this.sum(this.hand[0], this.hand[2]);
+      currentHand = this.hand[0].rank;
     }
 
-    crd1 = this.hand[0];
-    crd1s = this.hand[1];
-    crd2 = this.hand[2];
-    crd2s = this.hand[3];
+    crd1 = this.hand[0].rank;
+    crd1g = this.hand[0].img;
+    crd2 = this.hand[1].rank;
+    crd2g = this.hand[1].img;
 
     $('#players-cards').
     append("<h4>Your current hand is " + currentHand +"</h4>").
     prepend("<div id='card'></div>");
-    console.log(this.hand);
-    if (crd1s == 1){
-      this.display(crd1, heart);
-    } else if (crd1s == 2) {
-      this.display(crd1, spade);
-    }
-    else if (crd1s == 3) {
-      this.display(crd1, diamond);
-    } else {this.display(crd1, club);}
+    this.display(crd1, crd1g);
 
       $('#players-cards').
       prepend("<div id='card'></div>");
-      console.log(crd2s);
-      if (crd2s == 1){
-        this.display(crd2, heart);
-      } else if (crd2s == 2){
-        this.display(crd2, spade);
-      }  else if (crd2s == 3) {
-        this.display(crd2, diamond);
-      } else{this.display(crd2, club);}
+      this.display(crd2, crd2g)
   };
 
   this.play = function() {

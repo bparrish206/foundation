@@ -17,6 +17,10 @@ function Deck() {
     }
   };
 
+  this.shufDisplay = function(num, img) {
+    $('#deck').append("<li id='top'>"+num+"</li>"+"<img id='cardImg' src="+img+">" + "<li id='btm'>"+num+"</li>")
+  };
+
   this.shuffle = function(){
     $('#deck').empty();
     $("#peek").show();
@@ -24,9 +28,8 @@ function Deck() {
     while(m > 0) {
       rand = Math.floor(Math.random() * m--);
       t = this.cards[rand];
-      $("#deck").
-      append("<li>Card: " + t.rank + " of " + t.Suit() + " " + "</li>").
-      hide();
+      t.Suit();
+      this.shufDisplay(t.rank, t.img);
     }
   };
 
