@@ -19,8 +19,6 @@ function Blackjack(players, deck){
     var select;
     select = Math.floor(Math.random() * (52 - 1)) + 1;
     if (num % 2 ===0) {
-      //this.hand.push(deck.cards[select].numb());
-      //this.hand.push(deck.cards[select].suit);
       this.hand.push(deck.cards[select]);
     }
 
@@ -75,17 +73,17 @@ function Blackjack(players, deck){
 };
 
   this.deal = function(hits) {
-    var i, crd1, crd1s,crd1g, crd2, crd2s, crd2g;
+    var i, crd1, crd1g, crd2, crd2g;
     for (i = 0; i < hits; i++) {
       $("#players-cards").
       append("<p> Your card is: " + this.rand(2)+"</p>");
-      currentHand = this.hand[0].rank;
     }
 
     crd1 = this.hand[0].rank;
     crd1g = this.hand[0].img;
     crd2 = this.hand[1].rank;
     crd2g = this.hand[1].img;
+    currentHand = this.sum(this.hand[0].numb(), this.hand[1].numb());
 
     $('#players-cards').
     append("<h4>Your current hand is " + currentHand +"</h4>").
@@ -104,10 +102,14 @@ function Blackjack(players, deck){
   };
 
   this.clickY= function() {
-    bj.deal(1);
+    bj.rand(2);
     $("#round2").
-    append("<p> Your next card is " + bj.hand[2] + " </p>").
+    append("<p> Your next card is " + bj.hand[2].numb() + " </p>").
     hide();
+    $('#players-cards').
+    prepend("<div id='card'></div>");
+    bj.display(bj.hand[2].rank, bj.hand[2].img);
+    currentHand += bj.hand[2].numb();
     $("#round2").append("<p> Your current Hand is " + currentHand + "</p>").
     hide();
     bj.gameFlow();

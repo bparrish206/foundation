@@ -18,7 +18,9 @@ function Deck() {
   };
 
   this.shufDisplay = function(num, img) {
-    $('#deck').append("<li id='top'>"+num+"</li>"+"<img id='cardImg' src="+img+">" + "<li id='btm'>"+num+"</li>")
+    $('#deck').
+    prepend("<li id='lilCard'></li>");
+    $('#lilCard').append("<p id='lilTop'>"+num+"</p>"+"<img id='lilCardImg' src="+img+">" + "<p id='lilBtm'>"+num+"</p>")
   };
 
   this.shuffle = function(){

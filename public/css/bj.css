@@ -8,6 +8,9 @@
   margin-left:0 !important;
 }
 
+aside {
+  background-color:#19B21B;
+}
 
 #dealers-title {
   margin-left: 525px;
@@ -23,9 +26,22 @@
 
 }
 
+ul#deck {
+  display:inline-flex;
+}
+
 #card {
   height:200px;
   width:125px;
+  background:white;
+  border:1px solid black;
+  border-radius:3%;
+  margin:5px;
+}
+
+li#lilCard {
+  height:125px;
+  width:80px;
   background:white;
   border:1px solid black;
   border-radius:3%;
@@ -39,9 +55,23 @@
   height:90px;
 }
 
+#lilCardImg {
+  width:45px;
+  height:45px;
+  margin-left: 15px;
+  margin-top: -11px;
+}
+
 p#btm {
   margin-left: 84px;
   font-size: 200%;
+  color:#DB0B49
+}
+
+#lilBtm {
+  margin-left: 55px;
+  margin-top: 3px;
+  font-size: 125%;
   color:#DB0B49
 }
 
@@ -51,6 +81,11 @@ p#top {
   padding-left: 10px;
 }
 
+#lilTop {
+  font-size: 125%;
+  color:#DB0B49;
+  margin-left: 5px;
+}
 
 #card:first-child {
 margin-left: 150px;
