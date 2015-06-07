@@ -68,7 +68,6 @@ function Deck() {
         t = this.cards[rand];
         t.Suit();
         this.shufDisplay(t.rank, t.img, lng);
-        console.log(lng);
       }
     }
   };
