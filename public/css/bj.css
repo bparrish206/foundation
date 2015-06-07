@@ -10,6 +10,11 @@
 
 aside {
   background-color:#19B21B;
+  padding:15px;
+  }
+
+tbody {
+  display:inline-flex;
 }
 
 #dealers-title {
@@ -26,7 +31,7 @@ aside {
 
 }
 
-ul#deck {
+ul#deck, ul#deck2, ul#deck3, ul#deck4, ul#deck5, ul#deck6{
   display:inline-flex;
 }
 
@@ -39,13 +44,14 @@ ul#deck {
   margin:5px;
 }
 
-li#lilCard {
+li#lilCard, li#lilCard2,  li#lilCard3, li#lilCard4, li#lilCard5, li#lilCard6 {
   height:125px;
   width:80px;
   background:white;
   border:1px solid black;
   border-radius:3%;
-  margin:5px;
+  margin:1px;
+  list-style:none;
 }
 
 #cardImg {

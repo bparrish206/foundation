@@ -10,11 +10,28 @@ exports.Card = function (rank, suit) {
   this.rank = rank;
   this.suit = suit;
   this.img = '';
+
+  if (this.rank == 1) {
+    this.rank = "A";
+  }
+  else if (this.rank == 11) {
+    this.rank = "J";
+  }
+
+  else if (this.rank == 12) {
+    this.rank = "Q";
+  }
+
+  else if (this.rank == 13) {
+    this.rank = "K";
+  }
+
+
   this.numb = function(){
-    if (this.rank == 1){
+    if (this.rank == 'A'){
       return  1 || 11;
     }
-    else if (this.rank >= 10) {
+    else if (this.rank == "J" || this.rank == "Q" || this.rank == "K") {
       return 10;
     }
     else { return this.rank;}
@@ -41,7 +58,7 @@ exports.Card = function (rank, suit) {
       };
 
       this.show = function() {
-        return "the " + this.numb() +  this.Suit();
+        return "the " + this.rank +  this.Suit();
       };
 
   };
