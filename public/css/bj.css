@@ -35,7 +35,7 @@ ul#deck, ul#deck2, ul#deck3, ul#deck4, ul#deck5, ul#deck6{
   display:inline-flex;
 }
 
-#card {
+#card, #Dcard {
   height:200px;
   width:125px;
   background:white;
