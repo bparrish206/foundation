@@ -108,7 +108,7 @@ var ct = 1;
     bj.rand(2);
     console.log(bj.hand);
     $("#round2").
-    append("<p> Your next card is " + bj.hand[ct].numb() + " </p>").
+    prepend("<p> Your next card is " + bj.hand[ct].numb() + " </p>").
     hide();
     $('#players-cards').
     prepend("<div id='card'></div>");
