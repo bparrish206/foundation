@@ -101,19 +101,24 @@ function Blackjack(players, deck){
     this.gameFlow();
   };
 
+var ct = 1;
+
   this.clickY= function() {
+    ct++;
     bj.rand(2);
+    console.log(bj.hand);
     $("#round2").
-    append("<p> Your next card is " + bj.hand[2].numb() + " </p>").
+    prepend("<p> Your next card is " + bj.hand[ct].numb() + " </p>").
     hide();
     $('#players-cards').
     prepend("<div id='card'></div>");
-    bj.display(bj.hand[2].rank, bj.hand[2].img);
-    currentHand += bj.hand[2].numb();
+    bj.display(bj.hand[ct].rank, bj.hand[ct].img);
+    currentHand += bj.hand[ct].numb();
     $("#round2").append("<p> Your current Hand is " + currentHand + "</p>").
     hide();
     bj.gameFlow();
     $("#round2").fadeIn();
+    console.log(ct);
   };
 
   this.clickN= function() {

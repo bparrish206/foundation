@@ -4,7 +4,7 @@ var bj = require('./blackjack');
 var d = require('./deck.js');
 bj.play();
 
-$("#peek").hide();
+$(".peek").hide();  
 $("button#play-game").on("click", bj.showCards);
 $("button#reveal-cards").on("click", d.reveal);
 $("button#hitMeY").on("click", bj.clickY);

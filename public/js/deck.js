@@ -47,14 +47,14 @@ function Deck() {
   else {
     $('#deck').
     prepend("<li id='lilCard'></li>");
-    $('#lilCard', this).append("<p id='lilTop'>"+num+"</p>"+"<img id='lilCardImg' src="+img+">" + "<p id='lilBtm'>"+num+"</p>")
+    $('#lilCard').append("<p id='lilTop'>"+num+"</p>"+"<img id='lilCardImg' src="+img+">" + "<p id='lilBtm'>"+num+"</p>")
   }
   };
 
 
   this.shuffle = function(){
-    $('#deck').empty();
-    $("#peek").show();
+    $('ul.peek').empty();
+    $(".peek").show();
     var m = this.cards.length, t, rand, ck;
     ck = "";
     while(m > 0) {
@@ -74,9 +74,8 @@ function Deck() {
 
   this.reveal = function() {
     deck.shuffle();
-    $("#deck").fadeIn();
-    $("#deck").fadeOut('slow');
-    $("#peek").fadeOut('slow');
+    $(".peek").fadeIn();
+    $(".peek").fadeOut('slow');
   };
 }
 
