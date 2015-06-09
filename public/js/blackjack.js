@@ -23,7 +23,7 @@ function Blackjack(players, deck){
     }
 
     else  {
-      this.dealerHand.push(deck.cards[select]);
+      return this.dealerHand.push(deck.cards[select]);
     }
     return deck.cards[select].show();
   };
@@ -39,7 +39,7 @@ function Blackjack(players, deck){
     }
 
     else if (dealerzHand < 18) {
-      $("#dealers-cards").append("<p> the Dealer takes another card. </p>").hide();
+      $("#Status").append("<p> the Dealer takes another card. </p>").hide();
       this.dealer(1);
       this.gameFlow();
     }
@@ -58,22 +58,29 @@ function Blackjack(players, deck){
   };
 
   this.dealer = function(hits) {
-    var i, dcrd1, dcrd2;
-    dcrd1 = this.dealerHand[0].rank;
-    dcrd2 = this.dealerHand[1].rank;
+    var i, dcrd1, dcrd2, dcrd1G, dcrd2G;
     for (i = 0; i < hits; i++) {
       this.rand(1);
-      dealerzHand = this.sum(dcrd1, dcrd2);
-      console.log(this.dealerHand);
+      dcrd1 = this.dealerHand[0].rank;
+      dcrd1G = this.dealerHand[0].img;
+      if (this.dealerHand.length == 2){
+        dcrd2 = this.dealerHand[1].rank;
+        dcrd2G = this.dealerHand[1].img;
+        dealerzHand = this.sum(dcrd1, dcrd2);
+      }
     }
-    $("#dealers-cards").
+
+    $("#tally").
     append("<p> The dealer's hand is " + dealerzHand +"</p>").
     hide();
 
     $("#dealers-cards").
     prepend("<div id='Dcard'></div>");
-    this.dealerDisplay(dcrd1, this.dealerHand[0].img);
-    this.dealerDisplay(dcrd2, this.dealerHand[1].img);
+    this.dealerDisplay(dcrd1, dcrd1G);
+
+    $("#dealers-cards").
+    prepend("<div id='Dcard'></div>");
+    this.dealerDisplay(dcrd2, dcrd2G);
   };
 
   this.display = function(num, img) {
@@ -119,19 +126,17 @@ var ct = 1;
   this.clickY= function() {
     ct++;
     bj.rand(2);
-    console.log(bj.hand);
-    $("#round2").
+    $("#tally").
     prepend("<p> Your next card is " + bj.hand[ct].rank + " </p>").
     hide();
     $('#players-cards').
     prepend("<div id='card'></div>");
     bj.display(bj.hand[ct].rank, bj.hand[ct].img);
     currentHand += bj.hand[ct].numb();
-    $("#round2").prepend("<p> Your current Hand is " + currentHand + "</p>").
+    $("#tally").prepend("<p> Your current Hand is " + currentHand + "</p>").
     hide();
     bj.gameFlow();
-    $("#round2").fadeIn();
-    console.log(ct);
+    $("#tally").fadeIn();
   };
 
   this.clickN= function() {
