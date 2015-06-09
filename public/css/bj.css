@@ -17,9 +17,14 @@ tbody {
   display:inline-flex;
 }
 
+section h3 {
+  display: inline-block;
+}
+
 #dealers-title {
   margin-left: 525px;
   margin-top: -42px;
+  display: initial;
 }
 
 #players-cards, #dealers-cards {
@@ -35,7 +40,7 @@ ul#deck, ul#deck2, ul#deck3, ul#deck4, ul#deck5, ul#deck6{
   display:inline-flex;
 }
 
-#card {
+#card, #Dcard {
   height:200px;
   width:125px;
   background:white;
@@ -98,11 +103,29 @@ margin-left: 150px;
 display:inline-block !important;
 }
 
+#Dcard:first-child {
+  margin-left: 150px;
+  display:inline-block !important;
+}
+
+
 #card:nth-child(2) {
   margin-top: -205px;
 }
 
+#Dcard:nth-child(2) {
+  margin-top: -205px;
+}
 
 #Status {
   background: gold;
+}
+
+#tally {
+  background-color:#19B21B;
+  color:white;
+  font-size: 150%;
+  border:1px solid #ccc;
+  margin:15px;
+  display:block;
 }
