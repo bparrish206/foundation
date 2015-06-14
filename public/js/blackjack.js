@@ -40,8 +40,7 @@ function Blackjack(players, deck){
 
     else if (dealerzHand < 18) {
       $("#Status").append("<p> the Dealer takes another card. </p>").hide();
-      this.dealer(1);
-      this.gameFlow();
+      this.xtkrd(1);
     }
 
     else if (dealerzHand > 21) {
@@ -56,27 +55,45 @@ function Blackjack(players, deck){
       $("#Status").append("<p>You win!</p>").hide();
     }
   };
+ var krd = 1;
 
   this.dealer = function(hits) {
     var i, dcrd1, dcrd2, dcrd1G, dcrd2G;
     for (i = 0; i < hits; i++) {
       this.rand(1);
     }
+
+    $("#dscore").append(dealerzHand);
+
       dcrd1 = this.dealerHand[0].rank;
       dcrd1G = this.dealerHand[0].img;
       dcrd2 = this.dealerHand[1].rank;
       dcrd2G = this.dealerHand[1].img;
       dealerzHand = this.sum(this.dealerHand[0].numb(), this.dealerHand[1].numb());
 
-      $("#dscore").append(dealerzHand);
-
     $("#dealers-cards").
     prepend("<div id='Dcard'></div>");
     this.dealerDisplay(dcrd1, dcrd1G);
 
+    $("#dscore").replaceWith(dealerzHand);
+
     $("#dealers-cards").
     prepend("<div id='Dcard'></div>");
     this.dealerDisplay(dcrd2, dcrd2G);
+
+    this.xtkrd = function(krd) {
+    krd++
+    bj.rand(1);
+    $("#dtally").empty();
+    $('#dealers-cards').
+    prepend("<div id='Dcard'></div>");
+    bj.dealerDisplay(this.dealerHand[krd].rank, this.dealerHand[krd].img);
+    console.log(this.dealerHand[krd].img);
+    dealerzHand += this.dealerHand[krd].numb();
+    $("#dtally").append("<h3> Current Hand:  </h3>"+ " "+dealerzHand);
+    bj.gameFlow();
+
+    }
   };
 
   this.display = function(num, img) {
