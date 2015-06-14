@@ -70,10 +70,6 @@ function Blackjack(players, deck){
       }
     }
 
-    $("#tally").
-    append("<p> The dealer's hand is " + dealerzHand +"</p>").
-    hide();
-
     $("#dealers-cards").
     prepend("<div id='Dcard'></div>");
     this.dealerDisplay(dcrd1, dcrd1G);
@@ -95,8 +91,8 @@ this.dealerDisplay = function(num, img) {
   this.deal = function(hits) {
     var i, crd1, crd1g, crd2, crd2g;
     for (i = 0; i < hits; i++) {
-      $("#players-cards").
-      append("<p> Your card is: " + this.rand(2)+"</p>");
+    this.rand(2);
+    $("#score").append(currentHand);
     }
 
     crd1 = this.hand[0].rank;
@@ -106,18 +102,19 @@ this.dealerDisplay = function(num, img) {
     currentHand = this.sum(this.hand[0].numb(), this.hand[1].numb());
 
     $('#players-cards').
-    append("<h4>Your current hand is " + currentHand +"</h4>").
     prepend("<div id='card'></div>");
     this.display(crd1, crd1g);
+    $("#score").replaceWith(currentHand);
 
-      $('#players-cards').
-      prepend("<div id='card'></div>");
-      this.display(crd2, crd2g)
+    $('#players-cards').
+    prepend("<div id='card'></div>");
+    this.display(crd2, crd2g);
+
   };
 
   this.play = function() {
     this.deal(2);
-    this.dealer(2);
+    //this.dealer(2);
     this.gameFlow();
   };
 
@@ -126,17 +123,13 @@ var ct = 1;
   this.clickY= function() {
     ct++;
     bj.rand(2);
-    $("#tally").
-    prepend("<p> Your next card is " + bj.hand[ct].rank + " </p>").
-    hide();
+    $("#tally").empty();
     $('#players-cards').
     prepend("<div id='card'></div>");
     bj.display(bj.hand[ct].rank, bj.hand[ct].img);
     currentHand += bj.hand[ct].numb();
-    $("#tally").prepend("<p> Your current Hand is " + currentHand + "</p>").
-    hide();
+    $("#tally").append("<h3 style='color:white'> Current Score:  </h3>"+ " "+currentHand);
     bj.gameFlow();
-    $("#tally").fadeIn();
   };
 
   this.clickN= function() {
@@ -148,6 +141,7 @@ var ct = 1;
   this.showCards = function() {
     $("#players-cards").fadeIn();
     $("#dealers-cards").fadeIn();
+    $("#tally").fadeIn();
   };
 
   this.showStats = function(){
