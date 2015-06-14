@@ -61,14 +61,14 @@ function Blackjack(players, deck){
     var i, dcrd1, dcrd2, dcrd1G, dcrd2G;
     for (i = 0; i < hits; i++) {
       this.rand(1);
+    }
       dcrd1 = this.dealerHand[0].rank;
       dcrd1G = this.dealerHand[0].img;
-      if (this.dealerHand.length == 2){
-        dcrd2 = this.dealerHand[1].rank;
-        dcrd2G = this.dealerHand[1].img;
-        dealerzHand = this.sum(dcrd1, dcrd2);
-      }
-    }
+      dcrd2 = this.dealerHand[1].rank;
+      dcrd2G = this.dealerHand[1].img;
+      dealerzHand = this.sum(this.dealerHand[0].numb(), this.dealerHand[1].numb());
+
+      $("#dscore").append(dealerzHand);
 
     $("#dealers-cards").
     prepend("<div id='Dcard'></div>");
@@ -92,8 +92,8 @@ this.dealerDisplay = function(num, img) {
     var i, crd1, crd1g, crd2, crd2g;
     for (i = 0; i < hits; i++) {
     this.rand(2);
+  }
     $("#score").append(currentHand);
-    }
 
     crd1 = this.hand[0].rank;
     crd1g = this.hand[0].img;
@@ -105,7 +105,6 @@ this.dealerDisplay = function(num, img) {
     prepend("<div id='card'></div>");
     this.display(crd1, crd1g);
     $("#score").replaceWith(currentHand);
-
     $('#players-cards').
     prepend("<div id='card'></div>");
     this.display(crd2, crd2g);
@@ -114,7 +113,7 @@ this.dealerDisplay = function(num, img) {
 
   this.play = function() {
     this.deal(2);
-    //this.dealer(2);
+    this.dealer(2);
     this.gameFlow();
   };
 
@@ -128,7 +127,7 @@ var ct = 1;
     prepend("<div id='card'></div>");
     bj.display(bj.hand[ct].rank, bj.hand[ct].img);
     currentHand += bj.hand[ct].numb();
-    $("#tally").append("<h3 style='color:white'> Current Score:  </h3>"+ " "+currentHand);
+    $("#tally").append("<h3 style='color:white'> Current Hand:  </h3>"+ " "+currentHand);
     bj.gameFlow();
   };
 
@@ -142,6 +141,7 @@ var ct = 1;
     $("#players-cards").fadeIn();
     $("#dealers-cards").fadeIn();
     $("#tally").fadeIn();
+    $("#dtally").fadeIn();
   };
 
   this.showStats = function(){

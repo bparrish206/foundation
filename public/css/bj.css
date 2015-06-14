@@ -98,22 +98,21 @@ p#top {
   margin-left: 5px;
 }
 
-#card:first-child {
+#card:first-child, #card:nth-child(3), #card:nth-child(5) {
 margin-left: 150px;
 display:inline-block !important;
 }
 
-#Dcard:first-child {
+#Dcard:first-child, #card:nth-child(3), #card:nth-child(5) {
   margin-left: 150px;
   display:inline-block !important;
 }
 
-
-#card:nth-child(2) {
+#card:nth-child(2), #card:nth-child(4), #card:nth-child(6) {
   margin-top: -205px;
 }
 
-#Dcard:nth-child(2) {
+#Dcard:nth-child(2), #Dcard:nth-child(4), #Dcard:nth-child(6) {
   margin-top: -205px;
 }
 
