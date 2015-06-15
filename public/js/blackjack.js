@@ -159,6 +159,9 @@ var ct = 1;
     $("#dealers-cards").fadeIn();
     $("#tally").fadeIn();
     $("#dtally").fadeIn();
+    $("section").fadeIn();
+    $("#hitMeN").fadeIn();
+    $("#hitMeY").fadeIn();
   };
 
   this.showStats = function(){

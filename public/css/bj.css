@@ -8,14 +8,21 @@
   margin-left:0 !important;
 }
 
+.top-bar ul {
+  padding-top: 5px;
+}
+
+a {
+  color: white;
+}
+a:hover {
+  color:#c3cacc;
+}
+
 aside {
   background-color:#19B21B;
   padding:15px;
   }
-
-tbody {
-  display:inline-flex;
-}
 
 section h3 {
   display: inline-block;
@@ -24,19 +31,22 @@ section h3 {
 #crdz {
   display: inline-flex;
   list-style: none;
+  margin-bottom: 0;
 }
 
 #crdz li {
-  margin-right: 372px;
+  margin-right: 402px;
 }
 
 #crdz li h3 {
   text-decoration: underline;
 }
 
-#dealers-title {
 
+#play-game {
+  box-shadow: 2px 1px 6px rgba(0, 0, 0, 1);
 }
+
 
 #players-cards, #dealers-cards {
   background-color:#ddd;
@@ -44,6 +54,7 @@ section h3 {
   border: 1px solid #ccc;
   margin: 0 10px;
   display:none;
+  box-shadow: 3px 3px 8px rgba(1, 1, 10, 8);
 }
 
 #dealers-cards {
@@ -62,6 +73,7 @@ ul#deck, ul#deck2, ul#deck3, ul#deck4, ul#deck5, ul#deck6{
   border:1px solid black;
   border-radius:3%;
   margin:5px;
+  box-shadow: 2px 1px 6px rgba(0, 0, 0, 1);
 }
 
 li#lilCard, li#lilCard2,  li#lilCard3, li#lilCard4, li#lilCard5, li#lilCard6 {
@@ -142,4 +154,13 @@ display:inline-block !important;
   border:1px solid #ccc;
   display:block;
   margin-right: 275px;
+  box-shadow: 1px 2px 12px rgba(12, 34, 8, 10);
+}
+
+#dtally {
+  box-shadow: 1px 2px 12px rgba(12, 34, 8, 10);
+}
+
+button#hitMeY {
+  margin: 15px;
 }
