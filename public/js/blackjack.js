@@ -74,7 +74,7 @@ function Blackjack(players, deck){
     $("#dealers-cards").
     prepend("<div id='Dcard'></div>");
     this.dealerDisplay(dcrd1, dcrd1G);
-
+    console.log(dcrd1G);
     $("#dscore").replaceWith(dealerzHand);
 
     $("#dealers-cards").
@@ -90,7 +90,7 @@ function Blackjack(players, deck){
     bj.dealerDisplay(this.dealerHand[krd].rank, this.dealerHand[krd].img);
     console.log(this.dealerHand[krd].img);
     dealerzHand += this.dealerHand[krd].numb();
-    $("#dtally").append("<h3> Current Hand:  </h3>"+ " "+dealerzHand);
+    $("#dtally").append("<h3> Dealer's Hand: "+ " "+dealerzHand+"</h3>");
     bj.gameFlow();
 
     }
