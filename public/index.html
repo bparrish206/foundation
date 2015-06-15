@@ -10,16 +10,16 @@
   </head>
   <body>
 
-    <div class="row">
+
       <div class="large-12 columns">
         <div class="header-container">
           <header class="wrapper clearfix">
             <h1 class="title">Brent's Blackjack Bonanza!</h1>
             <nav class="top-bar">
               <ul>
-                <li id ="navs"><a href="#">About</a></li>
-                <li id ="navs"><a href="#">Rules</a></li>
-                <li id = "navs"><a href="#">Contact</a></li>
+                <li id ="navs"><a href="http://bparrish.herokuapp.com/about.html">About</a></li>
+                <li id ="navs"><a href="https://en.wikipedia.org/wiki/Blackjack">Rules</a></li>
+                <li id = "navs"><a href="http://bparrish.herokuapp.com/contact.html">Contact</a></li>
               </ul>
             </nav>
           </header>
@@ -54,32 +54,34 @@
               </button></p>
             </header>
 
-            <p id="Status">
-            </p>
-
             <section>
-              <h3>Your cards are:</h3>
-              <div id="tally" class="panel callout radius">Current Score: <h1 id="score"> </h1> </div>
-              <h3 id="dealers-title">Dealer's cards:</h3>
+
+              <div id="tally" class="panel callout radius medium-3 columns">Current Hand: <h1 id="score"> </h1> </div>
+              <div id="dtally" class="panel callout radius medium-3 columns">Dealer's Score: <h1 id="dscore"></h1></div>
+              <ul id="crdz">
+              <li><h3>Your cards</h3></li>
+              <li><h3 id="dealers-title">Dealer's cards</h3></li>
+              </ul>
               <div class="large-5 columns" id="players-cards">
               </div>
               <div class="large-5 columns" id="dealers-cards">
               </div>
             </section>
+
           </article>
           <article>
-
-            <p>
-              <button class="medium success button" id="hitMeY">Hit Me!
-              </button>
-              <button class="medium alert button" id="hitMeN"> No cards for me. </button>
-            </p>
-
-            <p style="background-color:white" id="round2">
-            </p>
+          </article>
+          <article>
           </article>
 
+          <p>
+              <button class="medium success button" id="hitMeY">Hit Me!
+              </button>
+              <button class="medium alert button" id="hitMeN"> Stay </button>
+            </p>
 
+            <div data-alert class="alert-box warning round" id="Status">
+            </div>
         </div> <!-- #main -->
       </div> <!-- #main-container -->
 
@@ -90,7 +92,6 @@
       </div>
 
       </div>
-    </div>
     <script src="bundle.js"></script>
     <script>
       $(document).foundation();

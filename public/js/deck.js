@@ -51,7 +51,6 @@ function Deck() {
   }
   };
 
-
   this.shuffle = function(){
     $('ul.peek').empty();
     $(".peek").show();
