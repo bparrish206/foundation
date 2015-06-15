@@ -162,6 +162,7 @@ var ct = 1;
     $("section").fadeIn();
     $("#hitMeN").fadeIn();
     $("#hitMeY").fadeIn();
+    $("#title").fadeOut();
   };
 
   this.showStats = function(){
