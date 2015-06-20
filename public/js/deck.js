@@ -19,33 +19,14 @@ function Deck() {
 
   this.shufDisplay = function(num, img, next) {
 
-  if (next > 10 && next < 19) {
-    $('#deck2').
+  if (next % 2 == 0) {
+    $('#deck').
     prepend("<li id='lilCard2'></li>");
     $('#lilCard2').append("<p id='lilTop'>"+num+"</p>"+"<img id='lilCardImg' src="+img+">" + "<p id='lilBtm'>"+num+"</p>")
   }
-  else if (next > 20 && next < 29) {
-    $('#deck3').
-    prepend("<li id='lilCard3'></li>");
-    $('#lilCard3').append("<p id='lilTop'>"+num+"</p>"+"<img id='lilCardImg' src="+img+">" + "<p id='lilBtm'>"+num+"</p>")
-  }
-  else if (next > 30 && next < 39) {
-    $('#deck4').
-    prepend("<li id='lilCard4'></li>");
-    $('#lilCard4').append("<p id='lilTop'>"+num+"</p>"+"<img id='lilCardImg' src="+img+">" + "<p id='lilBtm'>"+num+"</p>")
-  }
-  else if (next > 40 && next < 49) {
-    $('#deck5').
-    prepend("<li id='lilCard5'></li>");
-    $('#lilCard5').append("<p id='lilTop'>"+num+"</p>"+"<img id='lilCardImg' src="+img+">" + "<p id='lilBtm'>"+num+"</p>")
-  }
-  else if (next > 50) {
-    $('#deck6').
-    prepend("<li id='lilCard6'></li>");
-    $('#lilCard6').append("<p id='lilTop'>"+num+"</p>"+"<img id='lilCardImg' src="+img+">" + "<p id='lilBtm'>"+num+"</p>")
-  }
+
   else {
-    $('#deck').
+    $('#deck2').
     prepend("<li id='lilCard'></li>");
     $('#lilCard').append("<p id='lilTop'>"+num+"</p>"+"<img id='lilCardImg' src="+img+">" + "<p id='lilBtm'>"+num+"</p>")
   }
