@@ -22,7 +22,7 @@ function Blackjack(players, deck){
       this.hand.push(deck.cards[select]);
     }
 
-    else  {
+    else  {deck.cards[select].Suit();
       return this.dealerHand.push(deck.cards[select]);
     }
     return deck.cards[select].show();
@@ -40,7 +40,7 @@ function Blackjack(players, deck){
 
     else if (dealerzHand < 18) {
       $("#Status").append("<p> the Dealer takes another card. </p>").hide();
-      this.xtkrd(1);
+      this.xtkrd();
     }
 
     else if (dealerzHand > 21) {
@@ -55,39 +55,39 @@ function Blackjack(players, deck){
       $("#Status").append("<p>You win!</p>").hide();
     }
   };
- var krd = 1;
+ var krd = 0;
 
   this.dealer = function(hits) {
     var i, dcrd1, dcrd2, dcrd1G, dcrd2G;
     for (i = 0; i < hits; i++) {
-      this.rand(1);
+      this.rand(1);;
     }
+console.log(this.dealerHand);
 
     $("#dscore").append(dealerzHand);
-
       dcrd1 = this.dealerHand[0].rank;
       dcrd1G = this.dealerHand[0].img;
       dcrd2 = this.dealerHand[1].rank;
       dcrd2G = this.dealerHand[1].img;
       dealerzHand = this.sum(this.dealerHand[0].numb(), this.dealerHand[1].numb());
+console.log(dcrd1G, dcrd2G);
 
     $("#dealers-cards").
     prepend("<div id='Dcard'></div>");
     this.dealerDisplay(dcrd1, dcrd1G);
-    console.log(dcrd1G);
     $("#dscore").replaceWith(dealerzHand);
 
     $("#dealers-cards").
     prepend("<div id='Dcard'></div>");
     this.dealerDisplay(dcrd2, dcrd2G);
 
-    this.xtkrd = function(krd) {
+    this.xtkrd = function() {
     krd++
     bj.rand(1);
-    $("#dtally").empty();
+    $('#dtally').empty();
     $('#dealers-cards').
     prepend("<div id='Dcard'></div>");
-    bj.dealerDisplay(this.dealerHand[krd].rank, this.dealerHand[krd].img);
+    this.dealerDisplay(this.dealerHand[krd].rank, this.dealerHand[krd].img);
     console.log(this.dealerHand[krd].img);
     dealerzHand += this.dealerHand[krd].numb();
     $("#dtally").append("<h3> Dealer's Hand: "+ " "+dealerzHand+"</h3>");
@@ -162,6 +162,7 @@ var ct = 1;
     $("section").fadeIn();
     $("#hitMeN").fadeIn();
     $("#hitMeY").fadeIn();
+    $("#title").fadeOut();
   };
 
   this.showStats = function(){
