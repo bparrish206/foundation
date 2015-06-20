@@ -145,7 +145,12 @@ display:inline-block !important;
 }
 
 #Status {
+  margin: -9% 0% 2% 25%;
+}
 
+#Status p {
+text-align: center;
+margin-bottom: 0px;
 }
 
 #tally {

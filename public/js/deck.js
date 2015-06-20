@@ -49,6 +49,7 @@ function Deck() {
         t.Suit();
         this.shufDisplay(t.rank, t.img, lng);
       }
+      m--;
     }
   };
 
