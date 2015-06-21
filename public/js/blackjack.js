@@ -96,17 +96,36 @@ function Blackjack(players, deck){
 
   this.display = function(num, img) {
     $('#card').append("<p id='top'>"+num+"</p>"+"<img id='cardImg' src="+img+">" + "<p id='btm'>"+num+"</p>")
-    if (img.indexOf("spade_rahylc") > -1 || img.indexOf("Club_zl5a9x") >-1) {
+
+    if (img.indexOf("spade_rahylc") > -1) {
       $("#top").css("color", "black");
       $("#btm").css("color", "black");
+    }
+    else if (img.indexOf("Club_zl5a9x") > -1) {
+      $("#top").css("color", "black");
+      $("#btm").css("color", "black");
+    }
+    else {
+      $("#top").css("color", "#DB0B49");
+      $("#btm").css("color", "#DB0B49");
     }
 };
 
 this.dealerDisplay = function(num, img) {
   $('#Dcard').append("<p id='top'>"+num+"</p>"+"<img id='cardImg' src="+img+">" + "<p id='btm'>"+num+"</p>")
-  if (img.indexOf("spade_rahylc") > -1 || img.indexOf("Club_zl5a9x") >-1) {
+  console.log(img.indexOf("spade_rahylc"),img.indexOf("Club_zl5a9x"));
+  if (img.indexOf("spade_rahylc") > -1) {
       $("#top").css("color", "black");
       $("#btm").css("color", "black");
+    }
+    else if (img.indexOf("Club_zl5a9x") > -1) {
+      $("#top").css("color", "black");
+      $("#btm").css("color", "black");
+    }
+
+    else {
+      $("#top").css("color", "#DB0B49");
+      $("#btm").css("color", "#DB0B49");
     }
 };
 
