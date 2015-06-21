@@ -69,7 +69,6 @@ function Blackjack(players, deck){
       dcrd2 = this.dealerHand[1].rank;
       dcrd2G = this.dealerHand[1].img;
       dealerzHand = this.sum(this.dealerHand[0].numb(), this.dealerHand[1].numb());
-console.log(dcrd1G, dcrd2G);
 
     $("#dealers-cards").
     prepend("<div id='Dcard'></div>");
@@ -97,10 +96,18 @@ console.log(dcrd1G, dcrd2G);
 
   this.display = function(num, img) {
     $('#card').append("<p id='top'>"+num+"</p>"+"<img id='cardImg' src="+img+">" + "<p id='btm'>"+num+"</p>")
+    if (img.indexOf("spade_rahylc") > -1 || img.indexOf("Club_zl5a9x") >-1) {
+      $("#top").css("color", "black");
+      $("#btm").css("color", "black");
+    }
 };
 
 this.dealerDisplay = function(num, img) {
   $('#Dcard').append("<p id='top'>"+num+"</p>"+"<img id='cardImg' src="+img+">" + "<p id='btm'>"+num+"</p>")
+  if (img.indexOf("spade_rahylc") > -1 || img.indexOf("Club_zl5a9x") >-1) {
+      $("#top").css("color", "black");
+      $("#btm").css("color", "black");
+    }
 };
 
 
