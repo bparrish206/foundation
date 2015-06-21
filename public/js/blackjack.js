@@ -62,7 +62,6 @@ function Blackjack(players, deck){
     for (i = 0; i < hits; i++) {
       this.rand(1);;
     }
-console.log(this.dealerHand);
 
     $("#dscore").append(dealerzHand);
       dcrd1 = this.dealerHand[0].rank;
@@ -70,7 +69,6 @@ console.log(this.dealerHand);
       dcrd2 = this.dealerHand[1].rank;
       dcrd2G = this.dealerHand[1].img;
       dealerzHand = this.sum(this.dealerHand[0].numb(), this.dealerHand[1].numb());
-console.log(dcrd1G, dcrd2G);
 
     $("#dealers-cards").
     prepend("<div id='Dcard'></div>");
@@ -98,10 +96,18 @@ console.log(dcrd1G, dcrd2G);
 
   this.display = function(num, img) {
     $('#card').append("<p id='top'>"+num+"</p>"+"<img id='cardImg' src="+img+">" + "<p id='btm'>"+num+"</p>")
+    if (img.indexOf("spade_rahylc") > -1 || img.indexOf("Club_zl5a9x") >-1) {
+      $("#top").css("color", "black");
+      $("#btm").css("color", "black");
+    }
 };
 
 this.dealerDisplay = function(num, img) {
   $('#Dcard').append("<p id='top'>"+num+"</p>"+"<img id='cardImg' src="+img+">" + "<p id='btm'>"+num+"</p>")
+  if (img.indexOf("spade_rahylc") > -1 || img.indexOf("Club_zl5a9x") >-1) {
+      $("#top").css("color", "black");
+      $("#btm").css("color", "black");
+    }
 };
 
 
@@ -144,25 +150,26 @@ var ct = 1;
     prepend("<div id='card'></div>");
     bj.display(bj.hand[ct].rank, bj.hand[ct].img);
     currentHand += bj.hand[ct].numb();
-    $("#tally").append("<h3 style='color:white'> Current Hand:  </h3>"+ " "+currentHand);
+    $("#tally").append("<h3 style='color:#FFEF00'> Current Hand:  </h3>"+ " "+currentHand);
     bj.gameFlow();
   };
 
   this.clickN= function() {
     bj.gameFlow();
-    $("#Status").append("<p> Maybe Checkers is more your speed </p>").hide();
+    //$("#Status").append("<p> Maybe Checkers is more your speed </p>").hide();
     $("#Status").fadeIn();
+    $("#dealers-cards").fadeIn();
+    $("#dtally").fadeIn();
   };
 
   this.showCards = function() {
     $("#players-cards").fadeIn();
-    $("#dealers-cards").fadeIn();
     $("#tally").fadeIn();
-    $("#dtally").fadeIn();
     $("section").fadeIn();
     $("#hitMeN").fadeIn();
     $("#hitMeY").fadeIn();
     $("#title").fadeOut();
+    $("aside h3").hide();
   };
 
   this.showStats = function(){
