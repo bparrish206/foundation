@@ -17,12 +17,28 @@ function Deck() {
     }
   };
 
+  this.isBlack = function(img, lilTop, lilBtm) {
+    if (img.indexOf("spade_rahylc") > -1) {
+      $("#lilTop").css("color", "black");
+      $("#lilBtm").css("color", "black");
+    }
+    else if (img.indexOf("Club_zl5a9x") > -1) {
+      $("#lilTop").css("color", "black");
+      $("#lilBtm").css("color", "black");
+    }
+    else {
+      $("#lilTop").css("color", "#DB0B49");
+      $("#lilBtm").css("color", "#DB0B49");
+    }
+  }
+
   this.shufDisplay = function(num, img, next) {
 
   if (next % 2 == 0) {
     $('#deck').
     prepend("<li id='lilCard2'></li>");
     $('#lilCard2').append("<p id='lilTop'>"+num+"</p>"+"<img id='lilCardImg' src="+img+">" + "<p id='lilBtm'>"+num+"</p>")
+    this.isBlack(img, lilTop, lilBtm);
   }
 
   else {
