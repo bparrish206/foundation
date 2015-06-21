@@ -62,7 +62,6 @@ function Blackjack(players, deck){
     for (i = 0; i < hits; i++) {
       this.rand(1);;
     }
-console.log(this.dealerHand);
 
     $("#dscore").append(dealerzHand);
       dcrd1 = this.dealerHand[0].rank;
@@ -144,25 +143,26 @@ var ct = 1;
     prepend("<div id='card'></div>");
     bj.display(bj.hand[ct].rank, bj.hand[ct].img);
     currentHand += bj.hand[ct].numb();
-    $("#tally").append("<h3 style='color:white'> Current Hand:  </h3>"+ " "+currentHand);
+    $("#tally").append("<h3 style='color:#FFEF00'> Current Hand:  </h3>"+ " "+currentHand);
     bj.gameFlow();
   };
 
   this.clickN= function() {
     bj.gameFlow();
-    $("#Status").append("<p> Maybe Checkers is more your speed </p>").hide();
+    //$("#Status").append("<p> Maybe Checkers is more your speed </p>").hide();
     $("#Status").fadeIn();
+    $("#dealers-cards").fadeIn();
+    $("#dtally").fadeIn();
   };
 
   this.showCards = function() {
     $("#players-cards").fadeIn();
-    $("#dealers-cards").fadeIn();
     $("#tally").fadeIn();
-    $("#dtally").fadeIn();
     $("section").fadeIn();
     $("#hitMeN").fadeIn();
     $("#hitMeY").fadeIn();
     $("#title").fadeOut();
+    $("aside h3").hide();
   };
 
   this.showStats = function(){

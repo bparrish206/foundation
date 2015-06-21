@@ -13,16 +13,20 @@
 }
 
 a {
-  color: white;
+  color: #FFEF00;
 }
 a:hover {
   color:#c3cacc;
 }
 
 aside {
-  background-color:#19B21B;
+    background-image: linear-gradient(#19B21B, #555 126%);
   padding:15px;
   }
+
+aside h3 {
+  color:#FFEF00;
+}
 
 section h3 {
   display: inline-block;
@@ -155,7 +159,7 @@ margin-bottom: 0px;
 
 #tally {
   background-color:#19B21B;
-  color:white;
+  color: #FFEF00;
   font-size: 150%;
   border:1px solid #ccc;
   display:block;
@@ -169,4 +173,5 @@ margin-bottom: 0px;
 
 button#hitMeY {
   margin: 15px;
+  margin-left: 40%;
 }
