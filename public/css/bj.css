@@ -49,9 +49,7 @@ section h3 {
 
 #play-game {
   box-shadow: 2px 1px 6px rgba(0, 0, 0, 1);
-  margin: 20px 0;
 }
-
 
 #players-cards, #dealers-cards {
   background-color:#ddd;
@@ -149,7 +147,7 @@ display:inline-block !important;
 }
 
 #Status {
-  margin: -9% 0% 2% 25%;
+  margin: -18% 0% 2% 25%;
 }
 
 #Status p {
@@ -172,6 +170,24 @@ margin-bottom: 0px;
 }
 
 button#hitMeY {
-  margin: 15px;
-  margin-left: 40%;
+
+}
+
+#buttons {
+display: inline-flex;
+list-style: none;
+margin-top: -40px;
+padding: 5px;
+}
+
+button#reveal-cards {
+  margin-bottom: 0;
+}
+
+button {
+  box-shadow: 2px 1px 6px rgba(0, 0, 0, 1);
+}
+
+#buttons li button {
+  margin: 5px;
 }
