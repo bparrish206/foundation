@@ -2,7 +2,9 @@
 
 var bj = require('./blackjack');
 var d = require('./deck.js');
+var money = require('./bank.js');
 bj.play();
+console.log(money.Banks());
 
 $("#tally").hide();
 $("#dtally").hide();
@@ -14,3 +16,4 @@ $("button#play-game").on("click", bj.showCards);
 $("button#reveal-cards").on("click", d.reveal);
 $("button#hitMeY").on("click", bj.clickY);
 $("button#hitMeN").on("click", bj.clickN);
+$("#cash").append("<p>"+money.Banks()+"</p>");
