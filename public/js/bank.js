@@ -10,7 +10,7 @@ var add = function(num){
 
 var subtract = function(bet) {
   $("#cash").empty();
-  $("#cash").append("<h4>"+(bank -+ bet)+"</h4>");
+  $("#cash").append("<h5>"+"Bank"+"</h5>"+"<h4>"+(bank -+ bet)+"</h4>");
   return bank -+ bet;
 }
 

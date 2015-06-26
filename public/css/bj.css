@@ -129,10 +129,16 @@ p#top {
   margin-left: 5px;
 }
 
+
+#players-cards li, #dealers-cards li {
+  margin-left: 15px;
+}
+
 #card:first-child, #card:nth-child(3), #card:nth-child(5), #Dcard:first-child, #Dcard:nth-child(3), #Dcard:nth-child(5) {
-margin-left: -37px;
+margin-left: -48px;
 display:inline-block !important;
 }
+
 
 #card:nth-child(2), #card:nth-child(4), #card:nth-child(6) {
   margin-top: -205px;
@@ -154,7 +160,7 @@ margin-bottom: 0px;
 #tally {
   background-color:#19B21B;
   color: #FFEF00;
-  font-size: 116%;
+  font-size: 114%;
   border:1px solid #ccc;
   display:block;
   margin-right: 365px;
@@ -190,7 +196,8 @@ button {
 }
 
 #cash {
-
+  background-color: #ddd;
+  border-radius: 5%;
 }
 
 #betBox {
