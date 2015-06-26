@@ -6,6 +6,7 @@
     <title>Blackjack Game</title>
     <link rel="stylesheet" href="css/foundation.css" />
     <link rel="stylesheet" href="css/bj.css" />
+
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   </head>
   <body>
@@ -48,25 +49,17 @@
               <button class="medium success button" id="hitMeY">Hit Me!
               </button></li>
               <li><button class="medium alert button" id="hitMeN"> Stay </button>
-            </li>
-            <li><button id="cash"></button></li>
-    <div class="large-6 columns">
+            </li></ul>
+            <button id="cash"><label>Bank</label><h4>100</h4></button>
+    <div class="large-3 columns" id="betBox">
       <div class="row collapse postfix-round">
         <div class="small-9 columns">
 
-        <script type="text/javascript">
-        var bets = function(){
-  var bet = document.getElementById("bet").value;
-
-  console.log(bet)
-  console.log("test");
-  return 100-50;
-}</script>
           <input id="bet" type="text" placeholder="Bet? $5 minimum">
-          <input type="button" value="click" onclick="bets();"/>
+
         </div>
         <div class="small-3 columns">
-          <a href="#" id="#go" class="button postfix round">GO</a>
+          <button id="go" class="button postfix round">Bet</button>
         </div>
       </div>
     </div>
@@ -83,16 +76,18 @@
 
             <section>
 
-              <div id="tally" class="panel callout radius medium-3 columns">Current Hand: <h1 id="score"> </h1> </div>
-              <div id="dtally" class="panel callout radius medium-3 columns">Dealer's Score: <h1 id="dscore"></h1></div>
+              <div id="tally" class="panel callout radius medium-2 columns">Current Hand: <h5 id="score"> </h5> </div>
+              <div id="dtally" class="panel callout radius medium-2 columns">Dealer's Score: <h5 id="dscore"></h5></div>
               <ul id="crdz">
               <li><h3>Your cards</h3></li>
               <li><h3 id="dealers-title">Dealer's cards</h3></li>
               </ul>
 
-              <div class="large-5 columns" id="players-cards">
+              <div class="large-3 columns">
+              <ul id="players-cards"></ul>
               </div>
-              <div class="large-5 columns" id="dealers-cards">
+              <div class="large-3 columns" id="DealersHand">
+              <ul id="dealers-cards"></ul>
               </div>
 
 

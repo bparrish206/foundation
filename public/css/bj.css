@@ -20,7 +20,7 @@ a:hover {
 }
 
 aside {
-    background-image: linear-gradient(#19B21B, #555 126%);
+  background-image: linear-gradient(#19B21B, #555 126%);
   padding:15px;
   }
 
@@ -53,6 +53,7 @@ section h3 {
 
 #players-cards, #dealers-cards {
   background-color:#ddd;
+  list-style: none;
   padding: 30px 50px;
   border: 1px solid #ccc;
   margin: 0 10px;
@@ -128,14 +129,9 @@ p#top {
   margin-left: 5px;
 }
 
-#card:first-child, #card:nth-child(3), #card:nth-child(5) {
-margin-left: 150px;
+#card:first-child, #card:nth-child(3), #card:nth-child(5), #Dcard:first-child, #Dcard:nth-child(3), #Dcard:nth-child(5) {
+margin-left: -37px;
 display:inline-block !important;
-}
-
-#Dcard:first-child, #Dcard:nth-child(3), #Dcard:nth-child(5) {
-  margin-left: 150px;
-  display:inline-block !important;
 }
 
 #card:nth-child(2), #card:nth-child(4), #card:nth-child(6) {
@@ -147,7 +143,7 @@ display:inline-block !important;
 }
 
 #Status {
-  margin: -9% 0% 2% 62%;
+  margin: -6% 0% 2% 62%;
 }
 
 #Status p {
@@ -158,10 +154,11 @@ margin-bottom: 0px;
 #tally {
   background-color:#19B21B;
   color: #FFEF00;
-  font-size: 150%;
+  font-size: 116%;
   border:1px solid #ccc;
   display:block;
-  margin-right: 275px;
+  margin-right: 365px;
+  margin-bottom: 0px;
   box-shadow: 1px 2px 12px rgba(12, 34, 8, 10);
 }
 
@@ -194,4 +191,14 @@ button {
 
 #cash {
 
+}
+
+#betBox {
+  float: right;
+  margin-right: 17%;
+}
+
+#DealersHand {
+  float: left;
+  margin-left: 21%;
 }
