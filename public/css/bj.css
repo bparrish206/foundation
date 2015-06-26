@@ -149,7 +149,7 @@ display:inline-block !important;
 }
 
 #Status {
-  margin: -6% 0% 2% 62%;
+  margin: -8% 0% 2% 62%;
 }
 
 #Status p {
@@ -195,14 +195,14 @@ button {
   margin: 5px;
 }
 
-#cash {
-  background-color: #ddd;
-  border-radius: 5%;
+ul#cash{
+  margin-top: -13%;
+  margin-left: 50%;
 }
 
-#betBox {
-  float: right;
-  margin-right: 17%;
+ul#betBox {
+  margin-top: -13%;
+  margin-left: 60%;
 }
 
 #DealersHand {

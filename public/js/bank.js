@@ -9,7 +9,6 @@ var add = function(num){
 }
 
 var subtract = function(bet) {
-  $("#cash").empty();
   $("#cash").append("<h5>"+"Bank"+"</h5>"+"<h4>"+(bank -+ bet)+"</h4>");
   return bank -+ bet;
 }
@@ -18,6 +17,7 @@ var subtract = function(bet) {
 this.bets = function(){
      var bet = document.getElementById("bet").value;
      console.log(subtract(bet));
+     $("#betz").append(bet);
      return subtract(bet);
 }
 
