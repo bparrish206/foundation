@@ -209,3 +209,13 @@ ul#betBox {
   float: left;
   margin-left: 21%;
 }
+
+.pricing-table {
+  border: none;
+}
+
+.pricing-table .price {
+  font-size: 1.5rem;
+}
+
+

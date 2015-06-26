@@ -4,21 +4,20 @@ function Banks() {
 
 var bank = 100.00;
 
-var add = function(num){
-  return bank += num;
+this.add = function(bet){
+  $("#cash li.price").empty();
+  $("#cash li.price").append(bank += bet.value);
 }
 
-var subtract = function(bet) {
-  $("#cash").append("<h5>"+"Bank"+"</h5>"+"<h4>"+(bank -+ bet)+"</h4>");
-  return bank -+ bet;
+this.subtract = function(bet) {
+  $("#cash li.price").empty();
+  $("#cash li.price").append(bank -= bet.value);
 }
 
 
 this.bets = function(){
      var bet = document.getElementById("bet").value;
-     console.log(subtract(bet));
      $("#betz").append(bet);
-     return subtract(bet);
 }
 
 return bank;
