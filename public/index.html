@@ -6,6 +6,7 @@
     <title>Blackjack Game</title>
     <link rel="stylesheet" href="css/foundation.css" />
     <link rel="stylesheet" href="css/bj.css" />
+
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   </head>
   <body>
@@ -49,24 +50,16 @@
               </button></li>
               <li><button class="medium alert button" id="hitMeN"> Stay </button>
             </li>
-            <li><button id="cash"></button></li>
+            <li><button id="cash"><h4>100</h4></button></li>
     <div class="large-6 columns">
       <div class="row collapse postfix-round">
         <div class="small-9 columns">
 
-        <script type="text/javascript">
-        var bets = function(){
-  var bet = document.getElementById("bet").value;
-
-  console.log(bet)
-  console.log("test");
-  return 100-50;
-}</script>
           <input id="bet" type="text" placeholder="Bet? $5 minimum">
-          <input type="button" value="click" onclick="bets();"/>
+
         </div>
         <div class="small-3 columns">
-          <a href="#" id="#go" class="button postfix round">GO</a>
+          <button id="go" class="button postfix round">GO</button>
         </div>
       </div>
     </div>

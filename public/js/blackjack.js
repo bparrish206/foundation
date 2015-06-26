@@ -1,6 +1,8 @@
 'use strict';
 
 var deck = require('./deck.js');
+var money = require('./bank.js');
+
 deck.init();
 
 function Blackjack(players, deck){
