@@ -29,15 +29,17 @@ function Blackjack(players, deck){
     }
     return deck.cards[select].show();
   };
-
+console.log(money.subtract)
   this.gameFlow = function() {
     $("#Status").empty();
     if (currentHand == 21) {
       $("#Status").append("<p> YOU WIN!!!</p>").hide();
+      money.add(bet);
     }
 
     else if (currentHand > 21) {
       $("#Status").append("<p> Busted, you lose! </p>").hide();
+      money.subtract(bet);
     }
 
     else if (dealerzHand < 18) {
@@ -47,14 +49,17 @@ function Blackjack(players, deck){
 
     else if (dealerzHand > 21) {
       $("#Status").append("<p> Dealer busted you win!!! </p>");
+      money.add(bet);
     }
 
     else if (dealerzHand > currentHand &&  dealerzHand <= 21) {
       $("#Status").append("<p> Dealer wins, you lose </p>").hide();
+      money.subtract(bet);
     }
 
     else if (currentHand > dealerzHand && currentHand <=21) {
       $("#Status").append("<p>You win!</p>").hide();
+      money.add(bet);
     }
   };
  var krd = 0;

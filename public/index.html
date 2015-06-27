@@ -50,22 +50,20 @@
               </button></li>
               <li><button class="medium alert button" id="hitMeN"> Stay </button>
             </li></ul>
-            <button id="cash"><label>Bank</label><h4>100</h4></button>
-    <div class="large-3 columns" id="betBox">
-      <div class="row collapse postfix-round">
-        <div class="small-9 columns">
-
-          <input id="bet" type="text" placeholder="Bet? $5 minimum">
-
-        </div>
-        <div class="small-3 columns">
-          <button id="go" class="button postfix round">Bet</button>
-        </div>
-      </div>
-    </div>
 
             </aside>
-
+<ul class="pricing-table small-1 columns"  id="cash">
+  <li class="title">Bank</li>
+  <li class="price">100</li>
+  </ul>
+  <ul class="pricing-table small-2 columns" id="betBox">
+  <li class="title">Bet</li>
+  <li class="price" id="betz"></li>
+  <li class="bullet-item">
+          <input id="bet" type="text" placeholder="Bet? $5 minimum">
+          <button id="go" class="round">Bet</button>
+  </li>
+  </ul>
           <article>
             <header>
               <!--<h1 id="title">Are you ready to play?</h1> -->
@@ -77,7 +75,9 @@
             <section>
 
               <div id="tally" class="panel callout radius medium-2 columns">Current Hand: <h5 id="score"> </h5> </div>
-              <div id="dtally" class="panel callout radius medium-2 columns">Dealer's Score: <h5 id="dscore"></h5></div>
+
+              <div id="dtally" class="panel callout radius medium-2 columns">
+            Dealer's Score: <h5 id="dscore"></h5></div>
               <ul id="crdz">
               <li><h3>Your cards</h3></li>
               <li><h3 id="dealers-title">Dealer's cards</h3></li>
