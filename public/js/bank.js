@@ -2,11 +2,15 @@
 
 function Banks() {
 
-var bank = 100.00;
+var bank = 100;
 
 this.add = function(bet){
   $("#cash li.price").empty();
-  $("#cash li.price").append(bank += bet.value);
+  bet = parseInt(bet.value);
+  bank = bank + bet;
+  console.log(bet);
+  console.log(bank);
+  $("#cash li.price").append(bank);
 }
 
 this.subtract = function(bet) {
