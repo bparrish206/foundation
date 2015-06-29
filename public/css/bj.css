@@ -149,7 +149,7 @@ display:inline-block !important;
 }
 
 #Status {
-  margin: -8% 0% 2% 62%;
+  margin: -8% 0% 2% 46%;
 }
 
 #Status p {
@@ -200,6 +200,10 @@ button {
 ul#cash{
 float: right;
 margin-top: -5%;
+margin-left: -3%;
+  border-left: 1px solid;
+  z-index: 1;
+  padding-left: 0px;
 }
 
 ul#betBox {
@@ -221,6 +225,9 @@ margin-top: -5%;
 }
 
 .pricing-table .title {
-  padding: 0.7375rem 1.25rem;
+  padding: 0.6575rem 1.25rem;
   color: #19B21B;
+  font-size: 150%;
+  border: 1px solid;
+  margin-top: -6px;
 }

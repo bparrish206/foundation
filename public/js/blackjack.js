@@ -31,15 +31,16 @@ function Blackjack(players, deck){
   };
 console.log(money.subtract)
   this.gameFlow = function() {
+    var bank = 100;
     $("#Status").empty();
     if (currentHand == 21) {
       $("#Status").append("<p> YOU WIN!!!</p>").hide();
-      money.add(bet);
+      money.Add(bet, bank);
     }
 
     else if (currentHand > 21) {
       $("#Status").append("<p> Busted, you lose! </p>").hide();
-      money.subtract(bet);
+      money.subtract(bet, bank);
     }
 
     else if (dealerzHand < 18) {
@@ -49,17 +50,17 @@ console.log(money.subtract)
 
     else if (dealerzHand > 21) {
       $("#Status").append("<p> Dealer busted you win!!! </p>");
-      money.add(bet);
+      money.Add(bet, bank);
     }
 
     else if (dealerzHand > currentHand &&  dealerzHand <= 21) {
       $("#Status").append("<p> Dealer wins, you lose </p>").hide();
-      money.subtract(bet);
+      money.subtract(bet, bank);
     }
 
     else if (currentHand > dealerzHand && currentHand <=21) {
       $("#Status").append("<p>You win!</p>").hide();
-      money.add(bet);
+      money.Add(bet, bank);
     }
   };
  var krd = 0;
@@ -142,7 +143,7 @@ this.dealerDisplay = function(num, img) {
     for (i = 0; i < hits; i++) {
     this.rand(2);
   }
-    $("#score").append(currentHand);
+    $("#score").append("<h5>"+" " +currentHand+"</h5>");
 
     crd1 = this.hand[0].rank;
     crd1g = this.hand[0].img;
@@ -175,7 +176,7 @@ var ct = 1;
     prepend("<li><div id='card'></div></li>");
     bj.display(bj.hand[ct].rank, bj.hand[ct].img);
     currentHand += bj.hand[ct].numb();
-    $("#tally").append("<h5 style='color:#FFEF00'> Current Hand:  </h5>"+ " "+currentHand);
+    $("#tally").append("<h5 style='color:#FFEF00'> Current Hand: "+currentHand+"</h5>");
     bj.gameFlow();
   };
 
@@ -190,10 +191,6 @@ var ct = 1;
   };
 
   this.showCards = function() {
-    $("#players-cards").fadeIn();
-    $("#players-cards").css("display", "inline-flex");
-    $("#tally").fadeIn();
-    $("section").fadeIn();
     $("#hitMeN").fadeIn();
     $("#hitMeY").fadeIn();
     $("#cash").fadeIn();
