@@ -22,6 +22,8 @@ this.subtract = function(bet) {
 this.bets = function(){
      var bet = document.getElementById("bet").value;
      $("#betz").append(bet);
+     $("#go").hide();
+     $("#bet").hide();
 }
 
 return bank;
