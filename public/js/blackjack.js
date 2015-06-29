@@ -190,10 +190,6 @@ var ct = 1;
   };
 
   this.showCards = function() {
-    $("#players-cards").fadeIn();
-    $("#players-cards").css("display", "inline-flex");
-    $("#tally").fadeIn();
-    $("section").fadeIn();
     $("#hitMeN").fadeIn();
     $("#hitMeY").fadeIn();
     $("#cash").fadeIn();

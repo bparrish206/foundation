@@ -24,6 +24,13 @@ this.bets = function(){
      $("#betz").append(bet);
      $("#go").hide();
      $("#bet").hide();
+      $("#players-cards").fadeIn();
+      $("#players-cards").css("display", "inline-flex");
+      $("#tally").fadeIn();
+      $("section").fadeIn();
+
+
+
 }
 
 return bank;

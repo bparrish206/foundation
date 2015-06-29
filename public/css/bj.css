@@ -221,6 +221,9 @@ margin-top: -5%;
 }
 
 .pricing-table .title {
-  padding: 0.7375rem 1.25rem;
+  padding: 0.6575rem 1.25rem;
   color: #19B21B;
+  font-size: 150%;
+  border: 1px solid;
+  margin-top: -6px;
 }
