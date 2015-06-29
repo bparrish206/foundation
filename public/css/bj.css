@@ -165,11 +165,14 @@ margin-bottom: 0px;
   display:block;
   margin-right: 365px;
   margin-bottom: 0px;
+  margin-top: 2%;
   box-shadow: 1px 2px 12px rgba(12, 34, 8, 10);
 }
 
 #dtally {
   box-shadow: 1px 2px 12px rgba(12, 34, 8, 10);
+   margin-top: -7%;
+   margin-left: 48%;
 }
 
 button#hitMeY {
@@ -194,15 +197,14 @@ button {
 #buttons li button {
   margin: 5px;
 }
-
 ul#cash{
-  margin-top: -13%;
-  margin-left: 50%;
+float: right;
+margin-top: -5%;
 }
 
 ul#betBox {
-  margin-top: -13%;
-  margin-left: 60%;
+float: right;
+margin-top: -5%;
 }
 
 #DealersHand {
@@ -218,4 +220,7 @@ ul#betBox {
   font-size: 1.5rem;
 }
 
-
+.pricing-table .title {
+  padding: 0.7375rem 1.25rem;
+  color: #19B21B;
+}
