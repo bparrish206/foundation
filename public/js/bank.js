@@ -6,11 +6,7 @@ var bank = 100;
 
 
 this.Add = function(bet, bank){
-
-  //bet = bet.value;
-  console.log(bet);
-  console.log(bank);
-  bank += bet.value;
+  bank += Number(bet.value);
   $("#cash li.price").replaceWith("<li class='price'>" +bank+"</li>");
 }
 

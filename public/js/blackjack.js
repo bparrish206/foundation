@@ -29,7 +29,7 @@ function Blackjack(players, deck){
     }
     return deck.cards[select].show();
   };
-console.log(money.subtract)
+
   this.gameFlow = function() {
     var bank = 100;
     $("#Status").empty();
@@ -105,11 +105,11 @@ console.log(money.subtract)
   this.display = function(num, img) {
     $('#card').append("<p id='top'>"+num+"</p>"+"<img id='cardImg' src="+img+">" + "<p id='btm'>"+num+"</p>")
 
-    if (img.indexOf("spade_rahylc") > -1) {
+    if (img == 'http://res.cloudinary.com/bone/image/upload/v1433117747/spade_rahylc.jpg') {
       $("#top").css("color", "black");
       $("#btm").css("color", "black");
     }
-    else if (img.indexOf("Club_zl5a9x") > -1) {
+    else if (img == 'http://res.cloudinary.com/bone/image/upload/v1433117747/Club_zl5a9x.png'){
       $("#top").css("color", "black");
       $("#btm").css("color", "black");
     }
@@ -122,15 +122,14 @@ console.log(money.subtract)
 this.dealerDisplay = function(num, img) {
   $('#Dcard').append("<p id='top'>"+num+"</p>"+"<img id='cardImg' src="+img+">" + "<p id='btm'>"+num+"</p>")
 
-  if (img.indexOf("spade_rahylc") > -1) {
+  if (img == 'http://res.cloudinary.com/bone/image/upload/v1433117747/spade_rahylc.jpg') {
       $("#top").css("color", "black");
       $("#btm").css("color", "black");
     }
-    else if (img.indexOf("Club_zl5a9x") > -1) {
+    else if (img == 'http://res.cloudinary.com/bone/image/upload/v1433117747/Club_zl5a9x.png'){
       $("#top").css("color", "black");
       $("#btm").css("color", "black");
     }
-
     else {
       $("#top").css("color", "#DB0B49");
       $("#btm").css("color", "#DB0B49");

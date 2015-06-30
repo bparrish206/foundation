@@ -26,6 +26,7 @@ aside {
 
 aside h3 {
   color:#FFEF00;
+  padding-bottom: 15px;
 }
 
 section h3 {
@@ -230,4 +231,12 @@ margin-top: -5%;
   font-size: 150%;
   border: 1px solid;
   margin-top: -6px;
+}
+
+footer.wrapper {
+  margin-top: 11%;
+  text-align: center;
+  text-decoration: underline;
+  text-transform: uppercase;
+  text-decoration: underline;
 }
