@@ -45,6 +45,8 @@ exports.Card = function (rank, suit) {
 
       else if (this.suit == 2) {
         this.img = spade;
+        $("#lilTop").css("color", "black");
+      $("#lilBtm").css("color", "black");
         return " of Spades";
       }
 

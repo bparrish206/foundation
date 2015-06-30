@@ -18,11 +18,11 @@ function Deck() {
   };
 
   this.isBlack = function(img, lilTop, lilBtm) {
-    if (img.indexOf("spade_rahylc") > -1) {
+    if (img.indexOf("spade") > -1) {
       $("#lilTop").css("color", "black");
       $("#lilBtm").css("color", "black");
     }
-    else if (img.indexOf("Club_zl5a9x") > -1) {
+    else if (img.indexOf("Club") > -1) {
       $("#lilTop").css("color", "black");
       $("#lilBtm").css("color", "black");
     }
@@ -33,7 +33,6 @@ function Deck() {
   }
 
   this.shufDisplay = function(num, img, next) {
-
   if (next % 2 == 0) {
     $('#deck').
     prepend("<li id='lilCard2'></li>");
@@ -45,15 +44,19 @@ function Deck() {
     $('#deck2').
     prepend("<li id='lilCard'></li>");
     $('#lilCard').append("<p id='lilTop'>"+num+"</p>"+"<img id='lilCardImg' src="+img+">" + "<p id='lilBtm'>"+num+"</p>")
+    this.isBlack(img, lilTop, lilBtm);
   }
   };
 
   this.shuffle = function(){
     $('ul.peek').empty();
     $(".peek").show();
+
     var m = this.cards.length, t, rand, ck;
     ck = "";
     while(m > 0) {
+      $("#reveal-cards").hide()
+    $("#play-game").hide();
       rand = Math.floor(Math.random() * m--);
       if (ck.indexOf(rand) > -1){
         console.log("next");
@@ -67,6 +70,8 @@ function Deck() {
       }
       m--;
     }
+    setTimeout(function() { $("#reveal-cards").show(); }, 500);
+    setTimeout(function() { $("#play-game").show(); }, 500);
   };
 
   this.reveal = function() {
