@@ -94,7 +94,6 @@ function Blackjack(players, deck){
     $('#dealers-cards').
     prepend("<li><div id='Dcard'></div></li>");
     this.dealerDisplay(this.dealerHand[krd].rank, this.dealerHand[krd].img);
-    console.log(this.dealerHand[krd].img);
     dealerzHand += this.dealerHand[krd].numb();
     $("#dtally").append("<h5> Dealer's Hand: "+ " "+dealerzHand+"</h5>");
     bj.gameFlow();
@@ -106,34 +105,28 @@ function Blackjack(players, deck){
     $('#card').append("<p id='top'>"+num+"</p>"+"<img id='cardImg' src="+img+">" + "<p id='btm'>"+num+"</p>")
 
     if (img == 'http://res.cloudinary.com/bone/image/upload/v1433117747/spade_rahylc.jpg') {
-      $("#top").css("color", "black");
-      $("#btm").css("color", "black");
-    }
+       $("#top").css("color", "black");
+       $("#btm").css("color", "black");
+     }
+
     else if (img == 'http://res.cloudinary.com/bone/image/upload/v1433117747/Club_zl5a9x.png'){
-      $("#top").css("color", "black");
-      $("#btm").css("color", "black");
-    }
-    else {
-      $("#top").css("color", "#DB0B49");
-      $("#btm").css("color", "#DB0B49");
-    }
+       $("#top").css("color", "black");
+       $("#btm").css("color", "black");
+     }
 };
 
 this.dealerDisplay = function(num, img) {
-  $('#Dcard').append("<p id='top'>"+num+"</p>"+"<img id='cardImg' src="+img+">" + "<p id='btm'>"+num+"</p>")
+  $('#Dcard').append("<p id='dtop'>"+num+"</p>"+"<img id='cardImg' src="+img+">" + "<p id='dbtm'>"+num+"</p>")
 
   if (img == 'http://res.cloudinary.com/bone/image/upload/v1433117747/spade_rahylc.jpg') {
-      $("#top").css("color", "black");
-      $("#btm").css("color", "black");
-    }
+       $("#dtop").css("color", "black");
+       $("#dbtm").css("color", "black");
+     }
+
     else if (img == 'http://res.cloudinary.com/bone/image/upload/v1433117747/Club_zl5a9x.png'){
-      $("#top").css("color", "black");
-      $("#btm").css("color", "black");
-    }
-    else {
-      $("#top").css("color", "#DB0B49");
-      $("#btm").css("color", "#DB0B49");
-    }
+       $("#dtop").css("color", "black");
+       $("#dbtm").css("color", "black");
+     }
 };
 
 
