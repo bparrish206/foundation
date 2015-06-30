@@ -105,7 +105,7 @@ li#lilCard, li#lilCard2,  li#lilCard3, li#lilCard4, li#lilCard5, li#lilCard6 {
   margin-top: -11px;
 }
 
-p#btm {
+p#btm, p#dbtm {
   margin-left: 84px;
   font-size: 200%;
   color:#DB0B49
@@ -118,7 +118,7 @@ p#btm {
   color:#DB0B49
 }
 
-p#top {
+p#top, p#dtop {
   color:#DB0B49;
   font-size:200%;
   padding-left: 10px;
