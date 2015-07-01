@@ -11,8 +11,10 @@ app.use(bodyParser.urlencoded({
 
 app.use(express.static(__dirname + '/build'));
 
-
-app.listen(process.env.PORT || 8000);
+app.set('port', process.env.PORT || 8000);
+app.listen(app.get('port'), function() {
+  console.log('server running on port: %d', app.get('port'));
+});
 
 
 module.exports = app;
