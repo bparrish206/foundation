@@ -225,6 +225,12 @@ margin-top: -5%;
   font-size: 1.5rem;
 }
 
+#Bet {
+  left: -210%;
+  margin-top: 14%;
+  position: relative;
+}
+
 .pricing-table .title {
   padding: 0.6575rem 1.25rem;
   color: #19B21B;
