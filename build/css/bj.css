@@ -1,0 +1,248 @@
+
+#navs {
+  display:inline;
+  padding: 0 10px;
+}
+
+.top-bar {
+  margin-left:0 !important;
+}
+
+.top-bar ul {
+  padding-top: 5px;
+}
+
+a {
+  color: #FFEF00;
+}
+a:hover {
+  color:#c3cacc;
+}
+
+aside {
+  background-image: linear-gradient(#19B21B, #555 126%);
+  padding:15px;
+  }
+
+aside h3 {
+  color:#FFEF00;
+  padding-bottom: 15px;
+}
+
+section h3 {
+  display: inline-block;
+}
+
+#crdz {
+  display: inline-flex;
+  list-style: none;
+  margin-bottom: 0;
+}
+
+#crdz li {
+  margin-right: 402px;
+}
+
+#crdz li h3 {
+  text-decoration: underline;
+}
+
+
+#play-game {
+  box-shadow: 2px 1px 6px rgba(0, 0, 0, 1);
+}
+
+#players-cards, #dealers-cards {
+  background-color:#ddd;
+  list-style: none;
+  padding: 30px 50px;
+  border: 1px solid #ccc;
+  margin: 0 10px;
+  display:none;
+  box-shadow: 3px 3px 8px rgba(1, 1, 10, 8);
+}
+
+#dealers-cards {
+margin-right: 100px;
+}
+
+ul#deck, ul#deck2, ul#deck3, ul#deck4, ul#deck5, ul#deck6{
+  display:inline-flex;
+  margin-right: 300px;
+}
+
+#card, #Dcard {
+  height:200px;
+  width:125px;
+  background:white;
+  border:1px solid black;
+  border-radius:3%;
+  margin:5px;
+  box-shadow: 2px 1px 6px rgba(0, 0, 0, 1);
+}
+
+li#lilCard, li#lilCard2,  li#lilCard3, li#lilCard4, li#lilCard5, li#lilCard6 {
+  height:125px;
+  width:80px;
+  background:white;
+  border:1px solid black;
+  border-radius:3%;
+  margin:1px;
+  list-style:none;
+}
+
+#cardImg {
+  margin-top: -14px;
+  margin-left: 15px;
+  width:90px;
+  height:90px;
+}
+
+#lilCardImg {
+  width:45px;
+  height:45px;
+  margin-left: 15px;
+  margin-top: -11px;
+}
+
+p#btm, p#dbtm {
+  margin-left: 84px;
+  font-size: 200%;
+  color:#DB0B49
+}
+
+#lilBtm {
+  margin-left: 55px;
+  margin-top: 3px;
+  font-size: 125%;
+  color:#DB0B49
+}
+
+p#top, p#dtop {
+  color:#DB0B49;
+  font-size:200%;
+  padding-left: 10px;
+}
+
+#lilTop {
+  font-size: 125%;
+  color:#DB0B49;
+  margin-left: 5px;
+}
+
+
+#players-cards li, #dealers-cards li {
+  margin-left: 15px;
+}
+
+#card:first-child, #card:nth-child(3), #card:nth-child(5), #Dcard:first-child, #Dcard:nth-child(3), #Dcard:nth-child(5) {
+margin-left: -48px;
+display:inline-block !important;
+}
+
+
+#card:nth-child(2), #card:nth-child(4), #card:nth-child(6) {
+  margin-top: -205px;
+}
+
+#Dcard:nth-child(2), #Dcard:nth-child(4), #Dcard:nth-child(6) {
+  margin-top: -205px;
+}
+
+#Status {
+  margin: -8% 0% 2% 46%;
+}
+
+#Status p {
+text-align: center;
+margin-bottom: 0px;
+}
+
+#tally {
+  background-color:#19B21B;
+  color: #FFEF00;
+  font-size: 114%;
+  border:1px solid #ccc;
+  display:block;
+  margin-right: 365px;
+  margin-bottom: 0px;
+  margin-top: 2%;
+  box-shadow: 1px 2px 12px rgba(12, 34, 8, 10);
+}
+
+#dtally {
+  box-shadow: 1px 2px 12px rgba(12, 34, 8, 10);
+   margin-top: -7%;
+   margin-left: 48%;
+}
+
+button#hitMeY {
+
+}
+
+#buttons {
+display: inline-flex;
+list-style: none;
+margin-top: -55px;
+padding: 5px;
+}
+
+button#reveal-cards {
+  margin-bottom: 0;
+}
+
+button {
+  box-shadow: 2px 1px 6px rgba(0, 0, 0, 1);
+}
+
+#buttons li button {
+  margin: 5px;
+}
+ul#cash{
+float: right;
+margin-top: -5%;
+margin-left: -3%;
+  border-left: 1px solid;
+  z-index: 1;
+  padding-left: 0px;
+}
+
+ul#betBox {
+float: right;
+margin-top: -5%;
+}
+
+#DealersHand {
+  float: left;
+  margin-left: 21%;
+}
+
+.pricing-table {
+  border: none;
+}
+
+.pricing-table .price {
+  font-size: 1.5rem;
+}
+
+#Bet {
+  left: -210%;
+  margin-top: 14%;
+  position: relative;
+}
+
+.pricing-table .title {
+  padding: 0.6575rem 1.25rem;
+  color: #19B21B;
+  font-size: 150%;
+  border: 1px solid;
+  margin-top: -6px;
+}
+
+footer.wrapper {
+  margin-top: 11%;
+  text-align: center;
+  text-decoration: underline;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
