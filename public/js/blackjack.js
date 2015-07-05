@@ -36,11 +36,13 @@ function Blackjack(players, deck){
     if (currentHand == 21) {
       $("#Status").append("<p> YOU WIN!!!</p>").hide();
       money.Add(bet, bank);
+      $("#newGame").fadeIn();
     }
 
     else if (currentHand > 21) {
       $("#Status").append("<p> Busted, you lose! </p>").hide();
       money.subtract(bet, bank);
+      $("#newGame").fadeIn();
     }
 
     else if (dealerzHand < 18) {
@@ -51,16 +53,19 @@ function Blackjack(players, deck){
     else if (dealerzHand > 21) {
       $("#Status").append("<p> Dealer busted you win!!! </p>");
       money.Add(bet, bank);
+      $("#newGame").fadeIn();
     }
 
     else if (dealerzHand > currentHand &&  dealerzHand <= 21) {
       $("#Status").append("<p> Dealer wins, you lose </p>").hide();
       money.subtract(bet, bank);
+      $("#newGame").fadeIn();
     }
 
     else if (currentHand > dealerzHand && currentHand <=21) {
       $("#Status").append("<p>You win!</p>").hide();
       money.Add(bet, bank);
+      $("#newGame").fadeIn();
     }
   };
  var krd = 0;
@@ -156,6 +161,18 @@ this.dealerDisplay = function(num, img) {
     this.deal(2);
     this.dealer(2);
     this.gameFlow();
+  };
+
+  this.newGame = function() {
+    $('#tally').empty();
+    $('#dtally').empty();
+    $("#players-cards").empty();
+    $("#dealers-cards").empty();
+    this.hand = [];
+    this.dealerHand = [];
+    currentHand = 0;
+    dealerzHand = 0;
+    bj.play();
   };
 
 var ct = 1;
