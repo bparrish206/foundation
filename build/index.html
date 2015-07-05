@@ -1,0 +1,119 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blackjack Game</title>
+    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="css/bj.css" />
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  </head>
+  <body>
+
+
+      <div class="large-12 columns">
+        <div class="header-container">
+          <header class="wrapper clearfix">
+            <h1 class="title">Brent's Blackjack Bonanza!</h1>
+            <nav class="top-bar">
+              <ul>
+                <li id ="navs"><a href="http://bparrish.herokuapp.com/about.html">About</a></li>
+                <li id ="navs"><a href="https://en.wikipedia.org/wiki/Blackjack">Rules</a></li>
+                <li id = "navs"><a href="http://bparrish.herokuapp.com/contact.html">Contact</a></li>
+              </ul>
+            </nav>
+          </header>
+        </div>
+
+        <div class="main-container">
+          <div class="main wrapper clearfix">
+
+            <aside>
+              <h3>Let's shuffle the deck to start!</h3>
+
+              <h4 class="peek"> No Counting!
+              </h4>
+              <ul class="peek" id="deck">
+              </ul>
+              <ul class="peek" id="deck2"></ul>
+              <ul id="buttons">
+              <li><button id="reveal-cards">
+                SHUFFLE
+              </button></li>
+                <li><button id="play-game">
+                Play
+              </button></li>
+
+              <li>
+              <button class="medium success button" id="hitMeY">Hit Me!
+              </button></li>
+              <li><button class="medium alert button" id="hitMeN"> Stay </button>
+            </li>
+</ul>
+
+
+<ul class="pricing-table small-2 columns"  id="cash">
+  <li class="title">Bank</li>
+  <li class="price" id="bank">100</li>
+  </ul></li>
+
+  <ul class="pricing-table small-2 columns" id="betBox">
+  <li class="title">Bet</li>
+  <li class="price" id="betz"></li>
+  <li id="Bet"><input id="bet" type="text" placeholder="Bet? $5 minimum">
+  <button id="go" class="button postfix">Bet</button></li>
+</ul>
+</aside>
+
+          <article>
+            <header>
+              <!--<h1 id="title">Are you ready to play?</h1> -->
+
+              <div data-alert class="alert-box warning round small-3 columns" id="Status">
+            </div>
+            </header>
+
+            <section>
+
+              <div id="tally" class="panel callout radius medium-2 columns">Current Hand: <h5 id="score"> </h5> </div>
+
+              <div id="dtally" class="panel callout radius medium-2 columns">
+            Dealer's Score: <h5 id="dscore"></h5></div>
+              <ul id="crdz">
+              <li><h3>Your cards</h3></li>
+              <li><h3 id="dealers-title">Dealer's cards</h3></li>
+              </ul>
+
+              <div class="large-3 columns">
+              <ul id="players-cards"></ul>
+              </div>
+              <div class="large-3 columns" id="DealersHand">
+              <ul id="dealers-cards"></ul>
+              </div>
+
+
+          </article>
+          <article>
+          </article>
+          <article>
+          </article>
+
+            </section>
+        </div> <!-- #main -->
+      </div> <!-- #main-container -->
+
+
+      <div class="footer-container">
+        <footer class="wrapper">
+          <h5>Brent is not responsible for any losses or aggravation encountered while playing this game.</h5>
+        </footer>
+      </div>
+
+      </div>
+    <script src="bundle.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+  </body>
+</html>
