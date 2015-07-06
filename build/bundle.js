@@ -5,22 +5,23 @@ function Banks() {
 
 var bank = 100;
 
-
-this.Add = function(bet, bank){
+this.Add = function(bet){
   bank += Number(bet.value);
   $("#cash li.price").replaceWith("<li class='price'>" +bank+"</li>");
+  return bank;
 }
 
-this.subtract = function(bet, bank) {
+this.subtract = function(bet) {
   $("#cash li.price").empty();
   $("#cash li.price").append(bank -= bet.value);
+  return bank;
 }
 
 this.bets = function(){
-     var bet = document.getElementById("bet").value;
+     var bet = 0;
+     bet = document.getElementById("bet").value;
      $("#betz").append(bet);
-     $("#go").hide();
-     $("#bet").hide();
+     $("#Bet").hide();
       $("#players-cards").fadeIn();
       $("#players-cards").css("display", "inline-flex");
       $("#tally").fadeIn();
@@ -68,16 +69,20 @@ function Blackjack(players, deck){
   };
 
   this.gameFlow = function() {
-    var bank = 100;
+    //var bank = money.bank;
+    console.log(money.bank);
+    console.log(money);
     $("#Status").empty();
     if (currentHand == 21) {
       $("#Status").append("<p> YOU WIN!!!</p>").hide();
-      money.Add(bet, bank);
+      money.Add(bet);
+      $("#newGame").fadeIn();
     }
 
     else if (currentHand > 21) {
       $("#Status").append("<p> Busted, you lose! </p>").hide();
-      money.subtract(bet, bank);
+      money.subtract(bet);
+      $("#newGame").fadeIn();
     }
 
     else if (dealerzHand < 18) {
@@ -87,17 +92,20 @@ function Blackjack(players, deck){
 
     else if (dealerzHand > 21) {
       $("#Status").append("<p> Dealer busted you win!!! </p>");
-      money.Add(bet, bank);
+      money.Add(bet);
+      $("#newGame").fadeIn();
     }
 
     else if (dealerzHand > currentHand &&  dealerzHand <= 21) {
       $("#Status").append("<p> Dealer wins, you lose </p>").hide();
-      money.subtract(bet, bank);
+      money.subtract(bet);
+      $("#newGame").fadeIn();
     }
 
     else if (currentHand > dealerzHand && currentHand <=21) {
       $("#Status").append("<p>You win!</p>").hide();
-      money.Add(bet, bank);
+      money.Add(bet);
+      $("#newGame").fadeIn();
     }
   };
  var krd = 0;
@@ -193,6 +201,26 @@ this.dealerDisplay = function(num, img) {
     this.deal(2);
     this.dealer(2);
     this.gameFlow();
+  };
+
+  this.newGame = function() {
+    $('#tally').empty();
+    $('#dtally').empty();
+    $("#players-cards").empty();
+    $("#dealers-cards").empty();
+    $("#Status").empty();
+    document.getElementById("bet").value = 0;
+    $("#Bet").fadeIn();
+    $("#bet").fadeIn();
+    $("#go").fadeIn();
+    $("#betz").empty();
+
+    this.hand = [];
+    this.dealerHand = [];
+    currentHand = 0;
+    dealerzHand = 0;
+    bj.play();
+    $("#tally").append("<h5 style='color:#FFEF00'> Current Hand: "+currentHand+"</h5>");
   };
 
 var ct = 1;
@@ -1115,6 +1143,7 @@ $("#hitMeN").hide();
 $("#cash").hide();
 $("#betBox").hide();
 $("#dealers-title").hide();
+$("#newGame").hide();
 $("button#play-game").on("click", bj.showCards);
 $("button#play-game").on("click", function(){
   $("button#reveal-cards").fadeOut()
@@ -1125,6 +1154,7 @@ $("button#reveal-cards").on("click", d.reveal);
 $("button#hitMeY").on("click", bj.clickY);
 $("button#hitMeN").on("click", bj.clickN);
 $("#go").on("click", money.bets);
+$("button#newGame").on("click", bj.newGame);
 
 
 

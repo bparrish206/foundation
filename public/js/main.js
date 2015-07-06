@@ -15,6 +15,7 @@ $("#hitMeN").hide();
 $("#cash").hide();
 $("#betBox").hide();
 $("#dealers-title").hide();
+$("#newGame").hide();
 $("button#play-game").on("click", bj.showCards);
 $("button#play-game").on("click", function(){
   $("button#reveal-cards").fadeOut()
@@ -25,6 +26,7 @@ $("button#reveal-cards").on("click", d.reveal);
 $("button#hitMeY").on("click", bj.clickY);
 $("button#hitMeN").on("click", bj.clickN);
 $("#go").on("click", money.bets);
+$("button#newGame").on("click", bj.newGame);
 
 
 

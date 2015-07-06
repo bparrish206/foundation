@@ -4,22 +4,23 @@ function Banks() {
 
 var bank = 100;
 
-
-this.Add = function(bet, bank){
+this.Add = function(bet){
   bank += Number(bet.value);
   $("#cash li.price").replaceWith("<li class='price'>" +bank+"</li>");
+  return bank;
 }
 
-this.subtract = function(bet, bank) {
+this.subtract = function(bet) {
   $("#cash li.price").empty();
   $("#cash li.price").append(bank -= bet.value);
+  return bank;
 }
 
 this.bets = function(){
-     var bet = document.getElementById("bet").value;
+     var bet = 0;
+     bet = document.getElementById("bet").value;
      $("#betz").append(bet);
-     $("#go").hide();
-     $("#bet").hide();
+     $("#Bet").hide();
       $("#players-cards").fadeIn();
       $("#players-cards").css("display", "inline-flex");
       $("#tally").fadeIn();
