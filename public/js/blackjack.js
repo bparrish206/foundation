@@ -31,9 +31,6 @@ function Blackjack(players, deck){
   };
 
   this.gameFlow = function() {
-    //var bank = money.bank;
-    console.log(money.bank);
-    console.log(money);
     $("#Status").empty();
     if (currentHand == 21) {
       $("#Status").append("<p> YOU WIN!!!</p>").hide();
@@ -168,8 +165,11 @@ this.dealerDisplay = function(num, img) {
   this.newGame = function() {
     $('#tally').empty();
     $('#dtally').empty();
+    $("#dtally").hide();
     $("#players-cards").empty();
     $("#dealers-cards").empty();
+    $("#dealers-cards").hide();
+    $("#dealers-title").hide();
     $("#Status").empty();
     document.getElementById("bet").value = 0;
     $("#Bet").fadeIn();
@@ -181,8 +181,11 @@ this.dealerDisplay = function(num, img) {
     this.dealerHand = [];
     currentHand = 0;
     dealerzHand = 0;
-    bj.play();
+    bj.deal(2);
+    bj.dealer(2);
+    bj.gameFlow();
     $("#tally").append("<h5 style='color:#FFEF00'> Current Hand: "+currentHand+"</h5>");
+    console.log(currentHand);
   };
 
 var ct = 1;
@@ -201,7 +204,7 @@ var ct = 1;
 
   this.clickN= function() {
     bj.gameFlow();
-    //$("#Status").append("<p> Maybe Checkers is more your speed </p>").hide();
+    $("#dealers-title").fadeIn();
     $("#Status").fadeIn();
     $("#dealers-title").fadeIn();
     $("#dealers-cards").fadeIn();
