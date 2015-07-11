@@ -148,13 +148,12 @@ this.dealerDisplay = function(num, img) {
 
 
   this.deal = function(hits) {
-    currentHand = 0;
+    this.hand = [];
     var i, crd1, crd1g, crd2, crd2g;
     for (i = 0; i < hits; i++) {
     this.rand(2);
   }
     $("#score").append("<h5>"+" " +currentHand+"</h5>");
-
     crd1 = this.hand[0].rank;
     crd1g = this.hand[0].img;
     crd2 = this.hand[1].rank;
@@ -186,26 +185,26 @@ this.dealerDisplay = function(num, img) {
     $("#dealers-title").hide();
     $("#Status").empty();
     document.getElementById("bet").value = 0;
+    dealerzHand = 0;
+    ct = 1;
     $("#Bet").fadeIn();
     $("#bet").fadeIn();
     $("#go").fadeIn();
     $("#betz").empty();
-
-    this.hand = [];
-    this.dealerHand = [];
-    currentHand = 0;
-    dealerzHand = 0;
+console.log(currentHand)
     bj.deal(2);
     bj.dealer(2);
     bj.gameFlow();
     $("#tally").append("<h5 style='color:#FFEF00'> Current Hand: "+currentHand+"</h5>");
-    console.log(currentHand);
+    ;
+
   };
 
 var ct = 1;
 
   this.clickY= function() {
     ct++;
+    console.log(ct);
     bj.rand(2);
     $("#tally").empty();
     $('#players-cards').
@@ -213,7 +212,7 @@ var ct = 1;
     bj.display(bj.hand[ct].rank, bj.hand[ct].img);
     currentHand += bj.hand[ct].numb();
     $("#tally").append("<h5 style='color:#FFEF00'> Current Hand: "+currentHand+"</h5>");
-    bj.gameFlow();
+    //bj.gameFlow();
   };
 
   this.clickN= function() {
