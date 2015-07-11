@@ -1,3 +1,6 @@
+body {
+  font-family: 'Lucida Grande';
+}
 
 #navs {
   display:inline;
@@ -200,7 +203,7 @@ button {
 }
 ul#cash{
 float: right;
-margin-top: -4.6%;
+margin-top: -5%;
 margin-left: -3%;
   border-left: 1px solid;
   z-index: 1;
@@ -218,8 +221,8 @@ input#bet {
 
 label {
   font-size: 136%;
-  text-align: center;
-  margin-bottom: 7px;
+  color: #FFEF00;
+  margin-bottom: 12px;
 }
 
 #DealersHand {
@@ -237,7 +240,6 @@ label {
 
 #Bet {
   left: -210%;
-  margin-top: -6%;
   position: relative;
 }
 
@@ -258,30 +260,54 @@ footer.wrapper {
 }
 
 
+/* Smaller than standard 960 (devices and browsers) */
+@media only screen and (max-width: 959px) {}
 
+/* Tablet Portrait size to standard 960 (devices and browsers) */
+@media only screen and (min-width: 768px) and (max-width: 959px) {}
 
-@media only screen and (min-width: 64.063em) and (max-width: 90em) {
-body {
-  height:500px;
-  width:1250px;
-  } } /* min-width 1025px and max-width 1440px, use when QAing large screen-only issues */
+/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: 767px) {
+  #buttons {
+    display: initial;
+  }
+
+  ul#cash {
+    margin-top: -63.6%;
+  }
+
+ul#betBox {
+  float: right;
+  margin-top: -63.6%;
+  margin-right: 19%;
+}
+}
+
+/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+@media only screen and (min-width: 480px) and (max-width: 767px) {}
+
+/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+@media only screen and (max-width: 479px) {}
+
 
 // XLarge screens
 @media only screen and (min-width: 90.063em) {
-  body {
-  height:500px;
-  width:1250px;
-  }} /* min-width 1441px, xlarge screens */
+  ul#cash, ul#betBox {
+    margin-top: -2%;
+  }
+  } /* min-width 1441px, xlarge screens */
 
 @media only screen and (min-width: 90.063em) and (max-width: 120em) {
-body {
-  height:500px;
-  width:1250px;
-  } } /* min-width 1441px and max-width 1920px, use when QAing xlarge screen-only issues */
+  ul#cash, ul#betBox {
+    margin-top: -2%;
+  }
+
+   } /* min-width 1441px and max-width 1920px, use when QAing xlarge screen-only issues */
 
 // XXLarge screens
 @media only screen and (min-width: 120.063em) {
-  body {
-  height:500px;
-  width:1250px;
-  }} /* min-width 1921px, xxlarge screens */
+  ul#cash, ul#betBox {
+    margin-top: -2%;
+  }
+
+  } /* min-width 1921px, xxlarge screens */

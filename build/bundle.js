@@ -105,6 +105,12 @@ function Blackjack(players, deck){
       $("#newGame").fadeIn();
     }
 
+    else if (dealerzHand == currentHand) {
+      $("#Status").append("<p> Tie game goes to the house</p>").hide();
+      money.subtract(bet);
+      $("#newGame").fadeIn();
+    }
+
     else if (currentHand > dealerzHand && currentHand <=21) {
       $("#Status").append("<p>You win!</p>").hide();
       money.Add(bet);

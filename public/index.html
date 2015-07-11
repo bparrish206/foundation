@@ -50,7 +50,7 @@
               </button></li>
               <li><button class="medium alert button" id="hitMeN"> Stay </button>
             </li>
-            <li><button class="medium round" id="newGame">New Game</button></li>
+            <li><button class="medium round" id="newGame">New Hand</button></li>
 </ul>
 
 
@@ -62,10 +62,15 @@
   <ul class="pricing-table small-2 columns" id="betBox">
   <li class="title">Bet</li>
   <li class="price" id="betz"></li>
-  <li id="Bet">
-  <label>Place your bet</label>
+  <div class="row collapse postfix-round" id="Bet">
+   <label>Place your bet</label>
+        <div class="small-9 columns">
   <input id="bet" type="text" placeholder="Bet? $5 minimum">
-  <button id="go" class="button postfix">Bet</button></li>
+  </div>
+        <div class="small-3 columns">
+    <button id="go" class="button postfix round">Bet</button>
+    </div>
+    </div>
 </ul>
 </aside>
 
