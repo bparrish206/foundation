@@ -20,13 +20,13 @@ this.subtract = function(bet) {
 this.bets = function(){
      var bet = 0;
      bet = document.getElementById("bet").value;
-     $("#betz").append(bet);
-     $("#Bet").hide();
+      $("#betz").append(bet);
+      $("#Bet").hide();
       $("#players-cards").fadeIn();
       $("#players-cards").css("display", "inline-flex");
       $("#tally").fadeIn();
       $("section").fadeIn();
-      return bet;
+
 }
 
 }
@@ -185,6 +185,7 @@ this.dealerDisplay = function(num, img) {
 
 
   this.deal = function(hits) {
+    currentHand = 0;
     var i, crd1, crd1g, crd2, crd2g;
     for (i = 0; i < hits; i++) {
     this.rand(2);

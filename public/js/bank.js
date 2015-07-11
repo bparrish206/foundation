@@ -19,13 +19,13 @@ this.subtract = function(bet) {
 this.bets = function(){
      var bet = 0;
      bet = document.getElementById("bet").value;
-     $("#betz").append(bet);
-     $("#Bet").hide();
+      $("#betz").append(bet);
+      $("#Bet").hide();
       $("#players-cards").fadeIn();
       $("#players-cards").css("display", "inline-flex");
       $("#tally").fadeIn();
       $("section").fadeIn();
-      return bet;
+
 }
 
 }

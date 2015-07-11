@@ -148,6 +148,7 @@ this.dealerDisplay = function(num, img) {
 
 
   this.deal = function(hits) {
+    currentHand = 0;
     var i, crd1, crd1g, crd2, crd2g;
     for (i = 0; i < hits; i++) {
     this.rand(2);
