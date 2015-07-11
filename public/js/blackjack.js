@@ -32,6 +32,13 @@ function Blackjack(players, deck){
 
   this.gameFlow = function() {
     $("#Status").empty();
+
+    if (money.bank <= 0){
+      alert("Game over you lose!");
+      document.getElementById("bet").value = 0;
+
+    }
+
     if (currentHand == 21) {
       $("#Status").append("<p> YOU WIN!!!</p>").hide();
       money.Add(bet);

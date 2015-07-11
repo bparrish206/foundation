@@ -2,18 +2,18 @@
 
 function Banks() {
 
-var bank = 100;
+this.bank = 100;
 
 this.Add = function(bet){
-  bank += Number(bet.value);
-  $("#cash li.price").replaceWith("<li class='price'>" +bank+"</li>");
-  return bank;
+  this.bank += Number(bet.value);
+  $("#cash li.price").replaceWith("<li class='price'>" +this.bank+"</li>");
+  return this.bank;
 }
 
 this.subtract = function(bet) {
   $("#cash li.price").empty();
-  $("#cash li.price").append(bank -= bet.value);
-  return bank;
+  $("#cash li.price").append(this.bank -= bet.value);
+  return this.bank;
 }
 
 this.bets = function(){
@@ -28,7 +28,6 @@ this.bets = function(){
       return bet;
 }
 
-return bank;
 }
 
 var money = new Banks();
