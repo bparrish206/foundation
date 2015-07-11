@@ -200,7 +200,7 @@ button {
 }
 ul#cash{
 float: right;
-margin-top: -5%;
+margin-top: -4.6%;
 margin-left: -3%;
   border-left: 1px solid;
   z-index: 1;
@@ -209,7 +209,7 @@ margin-left: -3%;
 
 ul#betBox {
 float: right;
-margin-top: -5%;
+margin-top: -4.6%;
 }
 
 #DealersHand {
@@ -252,26 +252,26 @@ footer.wrapper {
 
 @media only screen and (min-width: 64.063em) and (max-width: 90em) {
 body {
-  height:366px;
+  height:500px;
   width:1250px;
   } } /* min-width 1025px and max-width 1440px, use when QAing large screen-only issues */
 
 // XLarge screens
 @media only screen and (min-width: 90.063em) {
   body {
-  height:366px;
+  height:500px;
   width:1250px;
   }} /* min-width 1441px, xlarge screens */
 
 @media only screen and (min-width: 90.063em) and (max-width: 120em) {
 body {
-  height:366px;
+  height:500px;
   width:1250px;
   } } /* min-width 1441px and max-width 1920px, use when QAing xlarge screen-only issues */
 
 // XXLarge screens
 @media only screen and (min-width: 120.063em) {
   body {
-  height:366px;
+  height:500px;
   width:1250px;
   }} /* min-width 1921px, xxlarge screens */

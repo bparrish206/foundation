@@ -3,18 +3,18 @@
 
 function Banks() {
 
-var bank = 100;
+this.bank = 100;
 
 this.Add = function(bet){
-  bank += Number(bet.value);
-  $("#cash li.price").replaceWith("<li class='price'>" +bank+"</li>");
-  return bank;
+  this.bank += Number(bet.value);
+  $("#cash li.price").replaceWith("<li class='price'>" +this.bank+"</li>");
+  return this.bank;
 }
 
 this.subtract = function(bet) {
   $("#cash li.price").empty();
-  $("#cash li.price").append(bank -= bet.value);
-  return bank;
+  $("#cash li.price").append(this.bank -= bet.value);
+  return this.bank;
 }
 
 this.bets = function(){
@@ -29,7 +29,6 @@ this.bets = function(){
       return bet;
 }
 
-return bank;
 }
 
 var money = new Banks();
@@ -70,6 +69,13 @@ function Blackjack(players, deck){
 
   this.gameFlow = function() {
     $("#Status").empty();
+
+    if (money.bank <= 0){
+      alert("Game over you lose!");
+      document.getElementById("bet").value = 0;
+
+    }
+
     if (currentHand == 21) {
       $("#Status").append("<p> YOU WIN!!!</p>").hide();
       money.Add(bet);
