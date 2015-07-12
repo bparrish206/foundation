@@ -273,14 +273,43 @@ footer.wrapper {
   }
 
   ul#cash {
-    margin-top: -63.6%;
+  margin-top: 19.6%;
+  float: left;
+  width: 42%;
   }
 
 ul#betBox {
-  float: right;
-  margin-top: -63.6%;
-  margin-right: 19%;
+    margin-top: -23.4%;
+  margin-right: 64%;
+  width: 42%;
 }
+
+.row {
+  display: table-row;
+}
+
+#Status {
+  margin: 5% 0% 2% 2%;
+}
+
+#dtally {
+  box-shadow: 1px 2px 12px rgba(12, 34, 8, 10);
+  margin-top: 72%;
+  margin-left: 0;
+  position: absolute;
+}
+
+h3#dealers-title {
+  position: absolute;
+  margin-top: 34%;
+  margin-left: -43%;
+}
+
+div#DealersHand{
+  margin-left: 0;
+  margin-top: 12%;
+}
+
 }
 
 /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
@@ -290,24 +319,12 @@ ul#betBox {
 @media only screen and (max-width: 479px) {}
 
 
-// XLarge screens
-@media only screen and (min-width: 90.063em) {
-  ul#cash, ul#betBox {
-    margin-top: -2%;
-  }
-  } /* min-width 1441px, xlarge screens */
+/* Large Devices, Wide Screens */
+    @media only screen and (max-width : 1200px) {
+    body {
+      width: 1200px;
+      margin: 3% auto;
+    }
 
-@media only screen and (min-width: 90.063em) and (max-width: 120em) {
-  ul#cash, ul#betBox {
-    margin-top: -2%;
-  }
+    }
 
-   } /* min-width 1441px and max-width 1920px, use when QAing xlarge screen-only issues */
-
-// XXLarge screens
-@media only screen and (min-width: 120.063em) {
-  ul#cash, ul#betBox {
-    margin-top: -2%;
-  }
-
-  } /* min-width 1921px, xxlarge screens */
