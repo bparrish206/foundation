@@ -268,6 +268,11 @@ footer.wrapper {
 
 /* All Mobile Sizes (devices and browser) */
 @media only screen and (max-width: 767px) {
+
+  body {
+    width: auto;
+  }
+
   #buttons {
     display: initial;
   }
@@ -279,36 +284,55 @@ footer.wrapper {
   }
 
 ul#betBox {
-    margin-top: -23.4%;
-  margin-right: 64%;
+  margin-top: -36.4%;
+  margin-right: 28%;
   width: 42%;
 }
 
-.row {
-  display: table-row;
+#Bet {
+  margin-top: 48%;
+  margin-left: 79%;
+}
+
+label {
+width: 191%;
+}
+
+button#go {
+  width: 243%;
+  position: relative;
+  right: -352%;
+  margin-top: -188%;
+}
+
+.small-9.columns {
+  width: 172%;
 }
 
 #Status {
   margin: 5% 0% 2% 2%;
+  min-height: 135px
 }
 
 #dtally {
   box-shadow: 1px 2px 12px rgba(12, 34, 8, 10);
-  margin-top: 72%;
+  margin-top: 225%;
+  width: auto;
   margin-left: 0;
   position: absolute;
 }
 
 h3#dealers-title {
   position: absolute;
-  margin-top: 34%;
-  margin-left: -43%;
+  margin-top: 140%;
+  margin-left: -147%;;
 }
 
 div#DealersHand{
   margin-left: 0;
-  margin-top: 12%;
+  margin-top: 56%;
 }
+
 
 }
 
@@ -320,7 +344,7 @@ div#DealersHand{
 
 
 /* Large Devices, Wide Screens */
-    @media only screen and (max-width : 1200px) {
+    @media only screen and (min-width : 1200px) {
     body {
       width: 1200px;
       margin: 3% auto;
