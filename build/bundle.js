@@ -20,13 +20,17 @@ this.subtract = function(bet) {
 this.bets = function(){
      var bet = 0;
      bet = document.getElementById("bet").value;
+     if (bet <= money.bank) {
       $("#betz").append(bet);
       $("#Bet").hide();
       $("#players-cards").fadeIn();
       $("#players-cards").css("display", "inline-flex");
       $("#tally").fadeIn();
       $("section").fadeIn();
-
+    }
+    else {
+      $('label').empty();
+      $('label').append("Insufficient Bank Funds")};
 }
 
 }
